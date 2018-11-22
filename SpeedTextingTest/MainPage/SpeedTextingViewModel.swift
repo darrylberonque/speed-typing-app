@@ -13,7 +13,7 @@ import RxCocoa
 class SpeedTextingViewModel {
     
     private var paragraphModel = ParagraphModel()
-    private var metricModel = MetricModel()
+    private var metricsModel = MetricsModel()
     private var displayableParagraphMutableText: NSMutableAttributedString
 
     var userInput = PublishRelay<String>()
@@ -54,17 +54,27 @@ class SpeedTextingViewModel {
             .disposed(by: disposeBag)
 
         userInput.asObservable()
-            .map({ return self.metricModel.calculateAccuracy(userInput: $0, paragraph: self.paragraphModel.paragraphText) })
+            .map({ [unowned self] input in
+                self.metricsModel.numCharactersTyped += 1
+                self.metricsModel.calculateAccuracy(userInput: input, paragraph: self.paragraphModel.paragraphText)
+                return self.metricsModel.accuracy
+            })
             .bind(to: accuracy)
             .disposed(by: disposeBag)
 
         Observable.combineLatest(userInput.asObservable(), timer.asObservable())
-            .map({ return self.metricModel.calculateCPM(userInput: $0, time: $1) })
+            .map({ [unowned self] input, time in
+                self.metricsModel.calculateCPM(userInput: input, time: time)
+                return self.metricsModel.cpm
+            })
             .bind(to: cpm)
             .disposed(by: disposeBag)
 
         Observable.combineLatest(userInput.asObservable(), timer.asObservable())
-            .map({ return self.metricModel.calculateWPM(userInput: $0, time: $1) })
+            .map({ [unowned self] input, time in
+                self.metricsModel.calculateWPM(userInput: input, time: time)
+                return self.metricsModel.wpm
+            })
             .bind(to: wpm)
             .disposed(by: disposeBag)
     }

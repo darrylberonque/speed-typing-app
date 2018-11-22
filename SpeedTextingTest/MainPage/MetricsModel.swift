@@ -8,28 +8,34 @@
 
 import Foundation
 
-struct MetricModel: Codable {
-    var cpm: Double?
-    var wpm: Double?
-    var accuracy: Double?
+struct MetricsModel: Codable {
+    var rank: Int?
 
-    func calculateCPM(userInput: String, time: Int) -> Double {
-        return time > 0 ? (Double(userInput.count) / Double(time)) * 60 : 0
+    var cpm = 0.0
+    var wpm = 0.0
+    var accuracy = 0.0
+    var numCharactersTyped = 0
+
+    mutating func calculateCPM(userInput: String, time: Int) {
+        cpm = time > 0 ? (Double(userInput.count) / Double(time)) * 60 : 0
     }
 
-    func calculateWPM(userInput: String, time: Int) -> Double {
-        return time > 0 ? ((Double(userInput.count) / Constants.oneWordCount) / Double(time)) * 60 : 0
+    mutating func calculateWPM(userInput: String, time: Int) {
+        wpm = time > 0 ? ((Double(userInput.count) / Constants.oneWordCount) / Double(time)) * 60 : 0
     }
 
-    func calculateAccuracy(userInput: String, paragraph: String) -> Double {
+    mutating func calculateAccuracy(userInput: String, paragraph: String) {
         var numCorrect = 0
 
         for i in 0..<userInput.count {
             let paragraphIndex = paragraph.index(paragraph.startIndex, offsetBy: i)
             let textIndex = userInput.index(userInput.startIndex, offsetBy: i)
-            numCorrect = paragraph[paragraphIndex] == userInput[textIndex] ? numCorrect + 1 : numCorrect
+
+            if paragraph[paragraphIndex] == userInput[textIndex] {
+                numCorrect += 1
+            }
         }
 
-        return userInput.count > 0 ? ((Double(numCorrect) / Double(userInput.count)) * 100).rounded(.down) : 0.0
+        accuracy = userInput.count > 0 ? ((Double(numCorrect) / Double(numCharactersTyped)) * 100).rounded(.down) : 0.0
     }
 }
