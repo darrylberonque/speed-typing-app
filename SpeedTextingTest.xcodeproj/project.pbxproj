@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2731E88C21A712D6007C8668 /* ParagraphModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E88B21A712D6007C8668 /* ParagraphModel.swift */; };
+		2731E88E21A71A16007C8668 /* MetricsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E88D21A71A16007C8668 /* MetricsModel.swift */; };
+		2731E89021A71CE5007C8668 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E88F21A71CE5007C8668 /* Constants.swift */; };
 		275C66A121A59E4F00FA1439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C66A021A59E4F00FA1439 /* AppDelegate.swift */; };
 		275C66A621A59E4F00FA1439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275C66A421A59E4F00FA1439 /* Main.storyboard */; };
 		275C66A821A59E5000FA1439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275C66A721A59E5000FA1439 /* Assets.xcassets */; };
@@ -40,6 +43,9 @@
 
 /* Begin PBXFileReference section */
 		16A6C09A06AFB4AA23E0FFD1 /* Pods-SpeedTextingTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTextingTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTextingTestTests/Pods-SpeedTextingTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2731E88B21A712D6007C8668 /* ParagraphModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphModel.swift; sourceTree = "<group>"; };
+		2731E88D21A71A16007C8668 /* MetricsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsModel.swift; sourceTree = "<group>"; };
+		2731E88F21A71CE5007C8668 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		275C669D21A59E4F00FA1439 /* SpeedTextingTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedTextingTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		275C66A021A59E4F00FA1439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		275C66A521A59E4F00FA1439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -160,6 +166,8 @@
 				275C66CE21A5A14300FA1439 /* SpeedTextingViewController.xib */,
 				275C66D221A5B8A700FA1439 /* SpeedTextingViewController.swift */,
 				275C66D421A5B95E00FA1439 /* SpeedTextingViewModel.swift */,
+				2731E88D21A71A16007C8668 /* MetricsModel.swift */,
+				2731E88B21A712D6007C8668 /* ParagraphModel.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 		275C66D121A5B23400FA1439 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				2731E88F21A71CE5007C8668 /* Constants.swift */,
 				275C66A421A59E4F00FA1439 /* Main.storyboard */,
 				275C66A921A59E5000FA1439 /* LaunchScreen.storyboard */,
 				275C66A721A59E5000FA1439 /* Assets.xcassets */,
@@ -405,8 +414,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				275C66D321A5B8A700FA1439 /* SpeedTextingViewController.swift in Sources */,
+				2731E88E21A71A16007C8668 /* MetricsModel.swift in Sources */,
+				2731E88C21A712D6007C8668 /* ParagraphModel.swift in Sources */,
 				275C66A121A59E4F00FA1439 /* AppDelegate.swift in Sources */,
 				275C66D521A5B95E00FA1439 /* SpeedTextingViewModel.swift in Sources */,
+				2731E89021A71CE5007C8668 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

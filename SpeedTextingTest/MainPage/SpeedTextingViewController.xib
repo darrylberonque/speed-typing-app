@@ -12,13 +12,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpeedTextingViewController" customModule="SpeedTextingTest" customModuleProvider="target">
             <connections>
-                <outlet property="accuracyLabel" destination="UI9-Tq-ag3" id="Cza-6P-85W"/>
-                <outlet property="cpmLabel" destination="kjy-GO-qO8" id="MuX-cO-Vmx"/>
+                <outlet property="accuracyLabel" destination="I4C-o8-Jt7" id="j89-YF-epD"/>
+                <outlet property="cpmLabel" destination="OI1-xg-hrE" id="H2l-Fc-7nk"/>
                 <outlet property="paragraphTextView" destination="49P-JA-K7i" id="ta5-Uv-SIc"/>
-                <outlet property="timeLabel" destination="4vI-cg-aOD" id="Wg2-nj-c1K"/>
+                <outlet property="timeLabel" destination="o7K-Qm-ZOa" id="Hc9-hG-3Be"/>
                 <outlet property="userTextInput" destination="hlZ-9H-6z1" id="rkf-34-3Cd"/>
                 <outlet property="view" destination="iN0-l3-epB" id="FlW-BR-9b3"/>
-                <outlet property="wpmLabel" destination="q8w-aa-4OW" id="lxc-rT-xZY"/>
+                <outlet property="wpmLabel" destination="LPB-7u-l8v" id="2AC-wo-q3D"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

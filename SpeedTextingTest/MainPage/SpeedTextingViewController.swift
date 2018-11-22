@@ -23,6 +23,7 @@ class SpeedTextingViewController: UIViewController {
 
     private var viewModel = SpeedTextingViewModel()
     private var disposeBag = DisposeBag()
+    private var timer = Timer()
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -40,25 +41,31 @@ class SpeedTextingViewController: UIViewController {
     }
 
     private func setupBindings() {
+        // Add unowned or weak self?
+
         userTextInput.autocorrectionType = .no
         userTextInput.rx.text
             .orEmpty
-            .bind(to: viewModel.currentUserInput)
+            .bind(to: viewModel.userInput)
             .disposed(by: disposeBag)
 
-        viewModel.cpm.asDriver().drive(onNext: { currentCPM in
-            print(currentCPM)
+        viewModel.timer.asObservable().subscribe(onNext: { [unowned self] time in
+            self.timeLabel.text = "\(time) s"
         }).disposed(by: disposeBag)
 
-        viewModel.wpm.asDriver().drive(onNext: { currentWPM in
-            print(currentWPM)
+        viewModel.cpm.asDriver().drive(onNext: { [unowned self] cpm in
+            self.cpmLabel.text = "\(cpm.rounded(.down))"
         }).disposed(by: disposeBag)
 
-        viewModel.accuracy.asDriver().drive(onNext: { currentAccuracy in
-            print(currentAccuracy)
+        viewModel.wpm.asDriver().drive(onNext: { [unowned self] wpm in
+            self.wpmLabel.text = "\(wpm.rounded(.down))"
         }).disposed(by: disposeBag)
 
-        viewModel.currentParagraphMutableText.asDriver(onErrorJustReturn: NSMutableAttributedString(string: viewModel.paragraphText)).drive(onNext: { [unowned self] currentParagraph in
+        viewModel.accuracy.asDriver().drive(onNext: { [unowned self] accuracy in
+            self.accuracyLabel.text = "\(accuracy) %"
+        }).disposed(by: disposeBag)
+
+        viewModel.currentParagraphMutableText.asDriver(onErrorJustReturn: NSMutableAttributedString(string:"")).drive(onNext: { [unowned self] currentParagraph in
             self.paragraphTextView.attributedText = currentParagraph
         }).disposed(by: disposeBag)
 
