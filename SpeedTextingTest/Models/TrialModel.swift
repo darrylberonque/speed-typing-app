@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct SpeedTextingResultModel: Codable {
+struct TrialModel: Codable {
+    var rank: Int
     var paragraphModel: ParagraphModel
     var metricsModel: MetricsModel
 }

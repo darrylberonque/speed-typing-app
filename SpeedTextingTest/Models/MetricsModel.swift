@@ -9,11 +9,10 @@
 import Foundation
 
 struct MetricsModel: Codable {
-    var rank: Int?
-
     var cpm = 0.0
     var wpm = 0.0
     var accuracy = 0.0
+    var trialResults: [Bool]?
     var numCharactersTyped = 0
 
     mutating func calculateCPM(userInput: String, time: Int) {

@@ -54,6 +54,8 @@ class SpeedTextingViewModel {
             .disposed(by: disposeBag)
 
         userInput.asObservable()
+            .distinctUntilChanged()
+            .skip(1)
             .map({ [unowned self] input in
                 self.metricsModel.numCharactersTyped += 1
                 self.metricsModel.calculateAccuracy(userInput: input, paragraph: self.paragraphModel.paragraphText)
