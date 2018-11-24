@@ -11,7 +11,7 @@ import IQKeyboardManagerSwift
 import RxSwift
 import RxCocoa
 
-class SpeedTextingViewController: UIViewController {
+final class SpeedTextingViewController: UIViewController {
 
     @IBOutlet private weak var paragraphTextView: UITextView!
     @IBOutlet private weak var userTextInput: UITextField!
@@ -21,6 +21,7 @@ class SpeedTextingViewController: UIViewController {
     @IBOutlet private weak var accuracyLabel: UILabel!
     @IBOutlet private weak var timeLabel: UILabel!
 
+    private var requestManager = RequestManager()
     private var viewModel = SpeedTextingViewModel()
     private var disposeBag = DisposeBag()
     private var timer = Timer()
@@ -54,11 +55,11 @@ class SpeedTextingViewController: UIViewController {
         }).disposed(by: disposeBag)
 
         viewModel.cpm.asDriver().drive(onNext: { [unowned self] cpm in
-            self.cpmLabel.text = "\(cpm.rounded(.down))"
+            self.cpmLabel.text = "\(cpm.rounded(.toNearestOrAwayFromZero))"
         }).disposed(by: disposeBag)
 
         viewModel.wpm.asDriver().drive(onNext: { [unowned self] wpm in
-            self.wpmLabel.text = "\(wpm.rounded(.down))"
+            self.wpmLabel.text = "\(wpm.rounded(.toNearestOrAwayFromZero))"
         }).disposed(by: disposeBag)
 
         viewModel.accuracy.asDriver().drive(onNext: { [unowned self] accuracy in

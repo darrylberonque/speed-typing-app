@@ -10,8 +10,9 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class SpeedTextingViewModel {
-    
+final class SpeedTextingViewModel {
+
+    private var requestManager = RequestManager()
     private var paragraphModel = ParagraphModel()
     private var metricsModel = MetricsModel()
     private var displayableParagraphMutableText: NSMutableAttributedString
@@ -32,6 +33,7 @@ class SpeedTextingViewModel {
     }
 
     private func setupBindings() {
+        // TODO: - Organize the bindings into readable functions
         userInput.asObservable()
             .map({ [unowned self] text in
                 for i in 0..<self.paragraphModel.paragraphText.count {
@@ -79,7 +81,15 @@ class SpeedTextingViewModel {
             })
             .bind(to: wpm)
             .disposed(by: disposeBag)
+
+        requestManager.getParagraph(pageIndex: Int.random(in: 1...Constants.stackOverFlowPageLimit)).asObservable()
+            .single()
+            .map({ excerpts in
+                let filteredExcerpts = excerpts.excerpts.filter({ $0.body.count > Constants.minimumBodyWordCount })
+                self.displayableParagraphMutableText = NSMutableAttributedString(string: filteredExcerpts[Int.random(in: 0...filteredExcerpts.count-1)].body)
+                return self.displayableParagraphMutableText
+            })
+            .bind(to: currentParagraphMutableText)
+            .disposed(by: disposeBag)
     }
-
-
 }
