@@ -10,10 +10,26 @@ import Foundation
 import RxSwift
 
 enum URLRequestError: Error {
+    case urlRequestBuilderError
     case noResponseError
-    case responseError
+    case responseError(Int)
     case noDataError
     case decodingError
+
+    var description: String {
+        switch self {
+        case .urlRequestBuilderError:
+            return "Error: Failed constructing the url request."
+        case .noResponseError:
+            return "Error: Given nil response"
+        case .responseError(let statusCode):
+            return "Error: Response error with status code \(statusCode)"
+        case .noDataError:
+            return "Error: Given nil data"
+        case .decodingError:
+            return "Error: Decoding failed"
+        }
+    }
 }
 
 class APIClient {
@@ -21,28 +37,29 @@ class APIClient {
         return Observable<T>.create({ observer in
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 if let error = error {
-                    observer.on(.error(error))
+                    observer.onError(error)
                     return
                 }
 
                 guard let response = response as? HTTPURLResponse else {
-                    observer.on(.error(URLRequestError.noResponseError))
+                    observer.onError(URLRequestError.noResponseError)
                     return
                 }
 
                 guard response.statusCode < 400 else {
-                    observer.on(.error(URLRequestError.responseError))
+                    observer.onError(URLRequestError.responseError(response.statusCode))
                     return
                 }
 
                 guard let data = data else {
-                    observer.on(.error(URLRequestError.noDataError))
+                    observer.onError(URLRequestError.noDataError)
                     return
                 }
-                
+
                 do {
-                    let result = try JSONDecoder().decode(T.self, from: data)
-                    observer.on(.next(result))
+                    let result = try JSONDecoder().decode([String: T].self, from: data)
+                    guard let resultContents = result[Constants.rootQueryString] else { return }
+                    observer.onNext(resultContents)
                     return
                 } catch {
                     observer.on(.error(URLRequestError.decodingError))

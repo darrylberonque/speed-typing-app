@@ -9,11 +9,10 @@
 import Foundation
 
 struct MetricsModel: Codable {
+    var time = 0
     var cpm = 0.0
     var wpm = 0.0
     var accuracy = 0.0
-    var trialResults: [Bool]?
-    var numCharactersTyped = 0
 
     mutating func calculateCPM(userInput: String, time: Int) {
         cpm = time > 0 ? (Double(userInput.count) / Double(time)) * 60 : 0
@@ -23,7 +22,7 @@ struct MetricsModel: Codable {
         wpm = time > 0 ? ((Double(userInput.count) / Constants.oneWordCount) / Double(time)) * 60 : 0
     }
 
-    mutating func calculateAccuracy(userInput: String, paragraph: String) {
+    mutating func calculateAccuracy(userInput: String, paragraph: String, numCharactersTyped: Int) {
         var numCorrect = 0
 
         for i in 0..<userInput.count {

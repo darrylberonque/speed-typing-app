@@ -10,7 +10,7 @@ import Foundation
 
 extension URLRequest {
     init?(builder: URLRequestBuilder) {
-        guard let path = builder.path, var components = URLComponents(string: "\(builder.baseURL)/\(path.value)") else { return nil }
+        guard var components = URLComponents(string: "\(builder.baseURL)\(builder.path.rawValue)") else { return nil }
 
         if let parameters = builder.parameters {
             components.queryItems = parameters.map({ URLQueryItem(name: $0, value: $1) })
@@ -20,6 +20,17 @@ extension URLRequest {
         self.init(url: url)
 
         httpMethod = builder.method.rawValue
-        builder.method == .get ? addValue(Constants.postHeader, forHTTPHeaderField: Constants.accept) : addValue(Constants.postHeader, forHTTPHeaderField: Constants.contentType)
+
+        if builder.method == .post {
+            do {
+                guard let parameters = builder.parameters else { return nil }
+                httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+                addValue(Constants.postHeader, forHTTPHeaderField: Constants.contentType)
+            } catch {
+                print("Unexpected request error: \(URLRequestError.urlRequestBuilderError).")
+            }
+        } else {
+            addValue(Constants.postHeader, forHTTPHeaderField: Constants.accept)
+        }
     }
 }

@@ -12,13 +12,13 @@ import RxCocoa
 
 final class SpeedTextingViewModel {
 
-    private var requestManager = RequestManager()
-    private var paragraphModel = ParagraphModel()
+    private var paragraphText = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
     private var metricsModel = MetricsModel()
     private var displayableParagraphMutableText: NSMutableAttributedString
 
     var userInput = PublishRelay<String>()
     var currentParagraphMutableText = PublishRelay<NSMutableAttributedString>()
+    var numCharactersTyped = 0
 
     var timer = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
     var cpm = BehaviorRelay(value: 0.0)
@@ -28,7 +28,7 @@ final class SpeedTextingViewModel {
     var disposeBag = DisposeBag()
 
     init() {
-        displayableParagraphMutableText = NSMutableAttributedString(string: paragraphModel.paragraphText)
+        displayableParagraphMutableText = NSMutableAttributedString(string: paragraphText)
         setupBindings()
     }
 
@@ -36,13 +36,13 @@ final class SpeedTextingViewModel {
         // TODO: - Organize the bindings into readable functions
         userInput.asObservable()
             .map({ [unowned self] text in
-                for i in 0..<self.paragraphModel.paragraphText.count {
+                for i in 0..<self.paragraphText.count {
                     var correctColorIndicator: UIColor
-                    let paragraphIndex = self.paragraphModel.paragraphText.index(self.paragraphModel.paragraphText.startIndex, offsetBy: i)
+                    let paragraphIndex = self.paragraphText.index(self.paragraphText.startIndex, offsetBy: i)
 
                     if i <= text.count-1 {
                         let textIndex = text.index(text.startIndex, offsetBy: i)
-                        correctColorIndicator = self.paragraphModel.paragraphText[paragraphIndex] == text[textIndex] ? .green : .red
+                        correctColorIndicator = self.paragraphText[paragraphIndex] == text[textIndex] ? .green : .red
                     } else {
                         correctColorIndicator = .black
                     }
@@ -59,8 +59,9 @@ final class SpeedTextingViewModel {
             .distinctUntilChanged()
             .skip(1)
             .map({ [unowned self] input in
-                self.metricsModel.numCharactersTyped += 1
-                self.metricsModel.calculateAccuracy(userInput: input, paragraph: self.paragraphModel.paragraphText)
+                // TODO: - Look over this logic if you can improve the structure
+                self.numCharactersTyped += 1
+                self.metricsModel.calculateAccuracy(userInput: input, paragraph: self.paragraphText, numCharactersTyped: self.numCharactersTyped)
                 return self.metricsModel.accuracy
             })
             .bind(to: accuracy)
@@ -80,16 +81,6 @@ final class SpeedTextingViewModel {
                 return self.metricsModel.wpm
             })
             .bind(to: wpm)
-            .disposed(by: disposeBag)
-
-        requestManager.getParagraph(pageIndex: Int.random(in: 1...Constants.stackOverFlowPageLimit)).asObservable()
-            .single()
-            .map({ excerpts in
-                let filteredExcerpts = excerpts.excerpts.filter({ $0.body.count > Constants.minimumBodyWordCount })
-                self.displayableParagraphMutableText = NSMutableAttributedString(string: filteredExcerpts[Int.random(in: 0...filteredExcerpts.count-1)].body)
-                return self.displayableParagraphMutableText
-            })
-            .bind(to: currentParagraphMutableText)
             .disposed(by: disposeBag)
     }
 }

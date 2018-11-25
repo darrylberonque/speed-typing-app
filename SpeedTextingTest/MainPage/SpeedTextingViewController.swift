@@ -21,7 +21,6 @@ final class SpeedTextingViewController: UIViewController {
     @IBOutlet private weak var accuracyLabel: UILabel!
     @IBOutlet private weak var timeLabel: UILabel!
 
-    private var requestManager = RequestManager()
     private var viewModel = SpeedTextingViewModel()
     private var disposeBag = DisposeBag()
     private var timer = Timer()

@@ -9,23 +9,54 @@
 import Foundation
 import RxSwift
 
-class RequestManager {
+final class RequestManager {
 
-    private var apiClient: APIClient
+    private static var apiClient =  APIClient()
+    static var sharedInstance = RequestManager()
 
-    init(apiClient: APIClient = APIClient()) {
-        self.apiClient = apiClient
-    }
+    private init() {}
 
     // MARK: - API requests
-    func getParagraph(pageIndex: Int) -> Observable<ExcerptsModel> {
+    
+    static func getAllTrials() -> Observable<TrialsModel> {
         guard let urlRequest = URLRequest(builder: URLRequestBuilder { builder in
-            builder.baseURL = Constants.stackOverflowBaseURL
-            builder.method = .get
-            builder.path = .paragraph(pageIndex)
-        }) else { return Observable.just(ExcerptsModel(excerpts: []))}
+            builder.parameters = ["query" : RequestParameters.allTrials.parameters]
+        }) else { return Observable.just(TrialsModel(trials: []))}
 
         return apiClient.sendRequest(request: urlRequest)
     }
 
+    static func getTrials(userID: String) -> Observable<UserDecodableResult> {
+        guard let urlRequest = URLRequest(builder: URLRequestBuilder { builder in
+            builder.parameters = ["query" : RequestParameters.userTrials(userID).parameters]
+        }) else { return Observable.just(UserDecodableResult()) }
+
+        return apiClient.sendRequest(request: urlRequest)
+    }
+
+    static func getAllParagraphs() -> Observable<ParagraphsModel> {
+        guard let urlRequest = URLRequest(builder: URLRequestBuilder { builder in
+            builder.parameters = ["query" : RequestParameters.allParagraphs.parameters]
+        }) else { return Observable.just(ParagraphsModel(paragraphs: [])) }
+
+        return apiClient.sendRequest(request: urlRequest)
+    }
+
+    static func postTrial(trialResult: TrialEncodableResult) -> Observable<TrialEncodableResult> {
+        guard let trial = trialResult.trial, let urlRequest = URLRequest(builder: URLRequestBuilder { builder in
+            builder.method = .post
+            builder.parameters = ["query" : RequestParameters.postTrial(trial).parameters]
+        }) else { return Observable.just(TrialEncodableResult()) }
+
+        return apiClient.sendRequest(request: urlRequest)
+    }
+
+    static func postUser(userResult: UserEncodableResult) -> Observable<UserEncodableResult> {
+        guard let user = userResult.user, let urlRequest = URLRequest(builder: URLRequestBuilder { builder in
+            builder.method = .post
+            builder.parameters = ["query" : RequestParameters.postUser(user).parameters]
+        }) else { return Observable.just(UserEncodableResult()) }
+
+        return apiClient.sendRequest(request: urlRequest)
+    }
 }
