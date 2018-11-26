@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+protocol Authenticator {
+    func authenticate()
+}
+
+final class LoginViewModel {
+
+    var authenticator: Authenticator = AuthenticatorFactory.constructAuthenticator(type: .facebook)
+
+    func login(type: AuthenticatorType) {
+        authenticator = AuthenticatorFactory.constructAuthenticator(type: type)
+        authenticator.authenticate()
+    }
+}

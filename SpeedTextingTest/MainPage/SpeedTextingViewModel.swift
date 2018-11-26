@@ -89,7 +89,7 @@ final class SpeedTextingViewModel {
             .distinctUntilChanged()
             .skip(1)
             .map({ [unowned self] input in
-                // TODO: - Look over this logic if you can improve the structure by just binding
+                // TODO: - Look over this logic if you can improve the structure by binding
                 if input.count <= self.paragraphText.count {
                     self.numCharactersTyped += 1
                     self.metricsModel.calculateAccuracy(userInput: input, paragraph: self.paragraphText, numCharactersTyped: self.numCharactersTyped)
