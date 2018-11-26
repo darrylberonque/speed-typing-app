@@ -9,6 +9,10 @@ target 'SpeedTextingTest' do
   pod 'RxSwift', '~> 4.2'
   pod 'RxCocoa', '~> 4.2'
   pod 'IQKeyboardManagerSwift'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
+  pod 'GoogleSignIn'
 
   target 'SpeedTextingTestTests' do
     inherit! :search_paths

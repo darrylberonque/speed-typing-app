@@ -18,7 +18,7 @@ final class RequestManager {
 
     // MARK: - API requests
     
-    static func getAllTrials() -> Observable<TrialsModel> {
+    class func getAllTrials() -> Observable<TrialsModel> {
         guard let urlRequest = URLRequest(builder: URLRequestBuilder { builder in
             builder.parameters = ["query" : RequestParameters.allTrials.parameters]
         }) else { return Observable.just(TrialsModel(trials: []))}
@@ -26,7 +26,7 @@ final class RequestManager {
         return apiClient.sendRequest(request: urlRequest)
     }
 
-    static func getTrials(userID: String) -> Observable<UserDecodableResult> {
+    class func getTrials(userID: String) -> Observable<UserDecodableResult> {
         guard let urlRequest = URLRequest(builder: URLRequestBuilder { builder in
             builder.parameters = ["query" : RequestParameters.userTrials(userID).parameters]
         }) else { return Observable.just(UserDecodableResult()) }
@@ -34,7 +34,7 @@ final class RequestManager {
         return apiClient.sendRequest(request: urlRequest)
     }
 
-    static func getAllParagraphs() -> Observable<ParagraphsModel> {
+    class func getAllParagraphs() -> Observable<ParagraphsModel> {
         guard let urlRequest = URLRequest(builder: URLRequestBuilder { builder in
             builder.parameters = ["query" : RequestParameters.allParagraphs.parameters]
         }) else { return Observable.just(ParagraphsModel(paragraphs: [])) }
@@ -42,7 +42,7 @@ final class RequestManager {
         return apiClient.sendRequest(request: urlRequest)
     }
 
-    static func postTrial(trialResult: TrialEncodableResult) -> Observable<TrialEncodableResult> {
+    class func postTrial(trialResult: TrialEncodableResult) -> Observable<TrialEncodableResult> {
         guard let trial = trialResult.trial, let urlRequest = URLRequest(builder: URLRequestBuilder { builder in
             builder.method = .post
             builder.parameters = ["query" : RequestParameters.postTrial(trial).parameters]
@@ -51,7 +51,7 @@ final class RequestManager {
         return apiClient.sendRequest(request: urlRequest)
     }
 
-    static func postUser(userResult: UserEncodableResult) -> Observable<UserEncodableResult> {
+    class func postUser(userResult: UserEncodableResult) -> Observable<UserEncodableResult> {
         guard let user = userResult.user, let urlRequest = URLRequest(builder: URLRequestBuilder { builder in
             builder.method = .post
             builder.parameters = ["query" : RequestParameters.postUser(user).parameters]

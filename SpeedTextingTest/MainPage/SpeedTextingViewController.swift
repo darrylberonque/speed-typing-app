@@ -47,6 +47,14 @@ final class SpeedTextingViewController: UIViewController {
             .bind(to: viewModel.userInput)
             .disposed(by: disposeBag)
 
+        viewModel.currentParagraphMutableText.asDriver(onErrorJustReturn: NSMutableAttributedString(string:"")).drive(onNext: { [unowned self] currentParagraph in
+            if self.viewModel.didFinishTest {
+                // TODO: Add logic for showing modal here
+            }
+
+            self.paragraphTextView.attributedText = currentParagraph
+        }).disposed(by: disposeBag)
+
         viewModel.timer.asObservable().subscribe(onNext: { [unowned self] time in
             self.timeLabel.text = "\(time) s"
         }).disposed(by: disposeBag)
@@ -62,10 +70,5 @@ final class SpeedTextingViewController: UIViewController {
         viewModel.accuracy.asDriver().drive(onNext: { [unowned self] accuracy in
             self.accuracyLabel.text = "\(accuracy) %"
         }).disposed(by: disposeBag)
-
-        viewModel.currentParagraphMutableText.asDriver(onErrorJustReturn: NSMutableAttributedString(string:"")).drive(onNext: { [unowned self] currentParagraph in
-            self.paragraphTextView.attributedText = currentParagraph
-        }).disposed(by: disposeBag)
-
     }
 }

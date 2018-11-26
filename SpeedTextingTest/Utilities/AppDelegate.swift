@@ -19,16 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow()
 
-        let rootVC = SpeedTextingViewController()
+        let rootVC = LoginViewController()
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
 
+        configureKeyboardManager()
+
+        return true
+    }
+
+    private func configureKeyboardManager() {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.shouldResignOnTouchOutside = false
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 5
-
-        return true
     }
 
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {

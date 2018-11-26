@@ -9,6 +9,9 @@
 import Foundation
 
 class Constants {
+    // MARK: - UI Constants
+    static let buttonCornerRadius = 25
+
     // MARK: - Main Page Constants
     static let oneWordCount = 5.0
     static let stackOverFlowPageLimit = 1000
