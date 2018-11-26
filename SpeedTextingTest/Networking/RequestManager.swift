@@ -26,7 +26,7 @@ final class RequestManager {
         return apiClient.sendRequest(request: urlRequest)
     }
 
-    class func getTrials(userID: String) -> Observable<UserDecodableResult> {
+    class func getUser(userID: String) -> Observable<UserDecodableResult> {
         guard let urlRequest = URLRequest(builder: URLRequestBuilder { builder in
             builder.parameters = ["query" : RequestParameters.userTrials(userID).parameters]
         }) else { return Observable.just(UserDecodableResult()) }
