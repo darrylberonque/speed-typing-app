@@ -41,8 +41,6 @@ final class SpeedTextingViewController: UIViewController {
     }
 
     private func setupBindings() {
-        // Add unowned or weak self?
-
         userTextInput.autocorrectionType = .no
         userTextInput.rx.text
             .orEmpty
