@@ -45,7 +45,7 @@ final class LoginViewController: UIViewController {
         FBSignIn.sharedInstance.delegate = self
     }
 
-    func constructUser(name: String, email: String, imageURL: String, authID: String, type: AuthenticatorType) {
+    func constructUser(name: String, email: String, imageURL: String, authID: String) {
         var user = UserModel()
         user.name = name
         user.email = email
@@ -53,13 +53,12 @@ final class LoginViewController: UIViewController {
         user.authID = authID
 
         RequestManager.postUser(userResult: UserEncodableResult(user: user))
-            .subscribe(onNext: { postedUser in
-                print(postedUser.user!)
+            .subscribe(onNext: { userResult in
+                guard let id = userResult.user?.id else { return }
+                UserDefaults.standard.set(id, forKey: "userID")
+                // TODO: - Present home page here.
             })
             .disposed(by: disposeBag)
-
-        // TODO: - Don't save accessToken, update saving user
-        // UserDefaults.standard.set(accessToken, forKey: type.rawValue)
     }
 
     @IBAction func loginWithFacebook(_ sender: UIButton) {

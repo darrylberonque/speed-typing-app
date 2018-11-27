@@ -17,4 +17,8 @@ extension UIColor {
     class var googleColor: UIColor {
         return UIColor(red: 214.0 / 255.0, green: 45.0 / 255.0, blue: 32.0 / 255.0, alpha: 1.0)
     }
+
+    class var blueThemeColor: UIColor {
+        return UIColor(red: 65.0 / 255.0, green: 99.0 / 255.0, blue: 140.0 / 255.0, alpha: 1.0)
+    }
 }

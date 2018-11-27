@@ -11,9 +11,12 @@ import Foundation
 class Constants {
     // MARK: - UI Constants
     static let buttonCornerRadius = 25
+    static let leaderboardImageName = "leaderboard"
+    static let trialsImageName = "trials"
 
     // MARK: - Login Constants
     static let defaultProfileImageURL = "http://mainenordmenn.com/wp-content/uploads/2017/09/Maine-Nordmenn-Board-Generic-Profile.jpg"
+    static let cachedID = "userID"
 
     // MARK: - Main Page Constants
     static let oneWordCount = 5.0

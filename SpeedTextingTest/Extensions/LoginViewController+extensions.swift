@@ -39,7 +39,7 @@ extension LoginViewController: FBSignInDelegate {
                 guard let userInfo = value.dictionaryValue, let name = userInfo["name"] as? String, let email = userInfo["email"] as? String, let picture = userInfo["picture"] as? [String : Any], let pictureData = picture["data"] as? [String : Any], let imageURL = pictureData["url"] as? String, let appID = AccessToken.current?.appId else { return }
 
                 DispatchQueue.main.async {
-                    welf.constructUser(name: name, email: email, imageURL: imageURL, authID: "\(appID)\(email)", type: .facebook)
+                    welf.constructUser(name: name, email: email, imageURL: imageURL, authID: "\(appID)\(email)")
                 }
             case .failed(let error):
                 print(error)
@@ -55,9 +55,9 @@ extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
         } else {
             DispatchQueue.main.async {
                 if let imageURL = user.profile.imageURL(withDimension: 900) {
-                    self.constructUser(name: user.profile.name, email: user.profile.email, imageURL: imageURL.absoluteString, authID: user.userID, type: .google)
+                    self.constructUser(name: user.profile.name, email: user.profile.email, imageURL: imageURL.absoluteString, authID: user.userID)
                 } else {
-                    self.constructUser(name: user.profile.name, email: user.profile.email, imageURL: Constants.defaultProfileImageURL, authID: user.userID, type: .google)
+                    self.constructUser(name: user.profile.name, email: user.profile.email, imageURL: Constants.defaultProfileImageURL, authID: user.userID)
                 }
             }
         }

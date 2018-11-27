@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow()
 
-        let rootVC = LoginViewController()
+        // TODO: - Change Speed Texting VC to home page
+        let rootVC = UserDefaults.standard.object(forKey: Constants.cachedID) == nil ? LoginViewController() : HomeViewController()
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
 

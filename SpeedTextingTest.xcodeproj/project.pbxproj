@@ -29,6 +29,10 @@
 		2731E8C721AC56B2007C8668 /* AuthenticatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E8C621AC56B2007C8668 /* AuthenticatorFactory.swift */; };
 		2731E8CB21AC6F52007C8668 /* GoogleAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E8CA21AC6F52007C8668 /* GoogleAuthenticator.swift */; };
 		2731E8CD21AC8195007C8668 /* LoginViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E8CC21AC8195007C8668 /* LoginViewController+extensions.swift */; };
+		2731E8D021ACE607007C8668 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E8CF21ACE607007C8668 /* HomeViewModel.swift */; };
+		2731E8D221ACE615007C8668 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E8D121ACE615007C8668 /* HomeViewController.swift */; };
+		2731E8D421ACE621007C8668 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2731E8D321ACE621007C8668 /* HomeViewController.xib */; };
+		2731E8D621ACFACF007C8668 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E8D521ACFACF007C8668 /* UIView+extensions.swift */; };
 		275C66A121A59E4F00FA1439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C66A021A59E4F00FA1439 /* AppDelegate.swift */; };
 		275C66A621A59E4F00FA1439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275C66A421A59E4F00FA1439 /* Main.storyboard */; };
 		275C66A821A59E5000FA1439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275C66A721A59E5000FA1439 /* Assets.xcassets */; };
@@ -84,6 +88,10 @@
 		2731E8C621AC56B2007C8668 /* AuthenticatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorFactory.swift; sourceTree = "<group>"; };
 		2731E8CA21AC6F52007C8668 /* GoogleAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthenticator.swift; sourceTree = "<group>"; };
 		2731E8CC21AC8195007C8668 /* LoginViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+extensions.swift"; sourceTree = "<group>"; };
+		2731E8CF21ACE607007C8668 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2731E8D121ACE615007C8668 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2731E8D321ACE621007C8668 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		2731E8D521ACFACF007C8668 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		275C669D21A59E4F00FA1439 /* SpeedTextingTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedTextingTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		275C66A021A59E4F00FA1439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		275C66A521A59E4F00FA1439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -173,6 +181,7 @@
 			children = (
 				2731E8BA21AC3111007C8668 /* UIColor+extensions.swift */,
 				2731E8BC21AC3206007C8668 /* UIButton+extensions.swift */,
+				2731E8D521ACFACF007C8668 /* UIView+extensions.swift */,
 				2731E89921A7CD3C007C8668 /* URLRequest+extension.swift */,
 				2731E8CC21AC8195007C8668 /* LoginViewController+extensions.swift */,
 				2731E8A521A8E3A6007C8668 /* Int+extension.swift */,
@@ -211,6 +220,16 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		2731E8CE21ACE529007C8668 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2731E8D321ACE621007C8668 /* HomeViewController.xib */,
+				2731E8D121ACE615007C8668 /* HomeViewController.swift */,
+				2731E8CF21ACE607007C8668 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		275C669421A59E4F00FA1439 = {
 			isa = PBXGroup;
 			children = (
@@ -238,7 +257,8 @@
 			children = (
 				2731E8C021AC3761007C8668 /* Presenter */,
 				2731E8B121AC26D8007C8668 /* Login */,
-				275C66D021A5B1E500FA1439 /* MainPage */,
+				2731E8CE21ACE529007C8668 /* Home */,
+				275C66D021A5B1E500FA1439 /* Game */,
 				2731E89521A7A89B007C8668 /* Networking */,
 				2731E89621A7A8B2007C8668 /* Models */,
 				2731E89F21A86034007C8668 /* Extensions */,
@@ -266,14 +286,14 @@
 			path = SpeedTextingTestUITests;
 			sourceTree = "<group>";
 		};
-		275C66D021A5B1E500FA1439 /* MainPage */ = {
+		275C66D021A5B1E500FA1439 /* Game */ = {
 			isa = PBXGroup;
 			children = (
 				275C66CE21A5A14300FA1439 /* SpeedTextingViewController.xib */,
 				275C66D221A5B8A700FA1439 /* SpeedTextingViewController.swift */,
 				275C66D421A5B95E00FA1439 /* SpeedTextingViewModel.swift */,
 			);
-			path = MainPage;
+			path = Game;
 			sourceTree = "<group>";
 		};
 		275C66D121A5B23400FA1439 /* Utilities */ = {
@@ -415,6 +435,7 @@
 				275C66A821A59E5000FA1439 /* Assets.xcassets in Resources */,
 				275C66CF21A5A14300FA1439 /* SpeedTextingViewController.xib in Resources */,
 				275C66A621A59E4F00FA1439 /* Main.storyboard in Resources */,
+				2731E8D421ACE621007C8668 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +586,7 @@
 				275C66D321A5B8A700FA1439 /* SpeedTextingViewController.swift in Sources */,
 				2731E88E21A71A16007C8668 /* MetricsModel.swift in Sources */,
 				2731E89421A73438007C8668 /* TrialModel.swift in Sources */,
+				2731E8D021ACE607007C8668 /* HomeViewModel.swift in Sources */,
 				2731E8B521AC2832007C8668 /* LoginViewController.swift in Sources */,
 				2731E89C21A7CF61007C8668 /* APIClient.swift in Sources */,
 				2731E8CD21AC8195007C8668 /* LoginViewController+extensions.swift in Sources */,
@@ -572,6 +594,7 @@
 				2731E8BB21AC3111007C8668 /* UIColor+extensions.swift in Sources */,
 				2731E8C321AC54E5007C8668 /* FacebookAuthenticator.swift in Sources */,
 				2731E8C721AC56B2007C8668 /* AuthenticatorFactory.swift in Sources */,
+				2731E8D221ACE615007C8668 /* HomeViewController.swift in Sources */,
 				2731E8B021AA2AB6007C8668 /* UserModel.swift in Sources */,
 				2731E89821A7C56E007C8668 /* URLRequestBuilder.swift in Sources */,
 				2731E8B321AC27B8007C8668 /* ViewControllerPresenter.swift in Sources */,
@@ -584,6 +607,7 @@
 				2731E8BD21AC3206007C8668 /* UIButton+extensions.swift in Sources */,
 				2731E8CB21AC6F52007C8668 /* GoogleAuthenticator.swift in Sources */,
 				2731E8A621A8E3A6007C8668 /* Int+extension.swift in Sources */,
+				2731E8D621ACFACF007C8668 /* UIView+extensions.swift in Sources */,
 				2731E8BF21AC3745007C8668 /* LoginViewModel.swift in Sources */,
 				2731E8A821A9FB53007C8668 /* ParagraphsModel.swift in Sources */,
 			);
