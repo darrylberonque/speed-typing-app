@@ -56,7 +56,9 @@ final class LoginViewController: UIViewController {
             .subscribe(onNext: { userResult in
                 guard let id = userResult.user?.id else { return }
                 UserDefaults.standard.set(id, forKey: "userID")
-                // TODO: - Present home page here.
+                DispatchQueue.main.async {
+                    ViewControllerPresenter.presentViewController(presenter: self, type: .home)
+                }
             })
             .disposed(by: disposeBag)
     }

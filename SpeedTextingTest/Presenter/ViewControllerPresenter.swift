@@ -11,7 +11,11 @@ import UIKit
 
 enum ViewControllerType {
     case login
+    case home
+    case countdown
     case game
+    case trials
+    case leaderboard
 }
 
 final class ViewControllerPresenter {

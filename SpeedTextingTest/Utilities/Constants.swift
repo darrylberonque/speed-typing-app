@@ -13,6 +13,7 @@ class Constants {
     static let buttonCornerRadius = 25
     static let leaderboardImageName = "leaderboard"
     static let trialsImageName = "trials"
+    static let countdownTimerFinalText = "Go!"
 
     // MARK: - Login Constants
     static let defaultProfileImageURL = "http://mainenordmenn.com/wp-content/uploads/2017/09/Maine-Nordmenn-Board-Generic-Profile.jpg"

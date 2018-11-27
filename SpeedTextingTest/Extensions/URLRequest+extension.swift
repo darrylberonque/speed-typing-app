@@ -27,7 +27,7 @@ extension URLRequest {
                 httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
                 addValue(Constants.postHeader, forHTTPHeaderField: Constants.contentType)
             } catch {
-                print("Unexpected request error: \(URLRequestError.urlRequestBuilderError).")
+                print("Request error: \(URLRequestError.urlRequestBuilderError).")
             }
         } else {
             addValue(Constants.postHeader, forHTTPHeaderField: Constants.accept)

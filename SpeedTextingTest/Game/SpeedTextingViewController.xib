@@ -114,28 +114,17 @@
                         </stackView>
                     </subviews>
                 </stackView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sg0-do-TgM">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                    <color key="backgroundColor" red="0.80645275115966797" green="0.48510062966184275" blue="0.12357139395958683" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstAttribute="height" priority="250" constant="200" id="rhk-Nz-TMt"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hlZ-9H-6z1" secondAttribute="trailing" constant="15" id="0iG-oU-eHp"/>
                 <constraint firstItem="hlZ-9H-6z1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="16S-OT-j3C"/>
-                <constraint firstItem="49P-JA-K7i" firstAttribute="top" secondItem="Sg0-do-TgM" secondAttribute="bottom" constant="12.5" id="1Cn-Gd-clZ"/>
                 <constraint firstItem="49P-JA-K7i" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3b3-2w-Jqg"/>
                 <constraint firstItem="aAV-57-ism" firstAttribute="centerY" secondItem="49P-JA-K7i" secondAttribute="centerY" constant="5" id="NnP-Dn-diP"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aAV-57-ism" secondAttribute="trailing" constant="15" id="OIo-PT-Qrx"/>
                 <constraint firstItem="hlZ-9H-6z1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="U0V-eD-AcJ"/>
-                <constraint firstItem="Sg0-do-TgM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Y9O-Oj-bys"/>
                 <constraint firstItem="49P-JA-K7i" firstAttribute="height" secondItem="aAV-57-ism" secondAttribute="height" id="dE3-PL-Eh5"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Sg0-do-TgM" secondAttribute="trailing" id="gZd-gN-LQm"/>
                 <constraint firstItem="aAV-57-ism" firstAttribute="leading" secondItem="49P-JA-K7i" secondAttribute="trailing" constant="20" id="jc8-mN-4RD"/>
-                <constraint firstItem="Sg0-do-TgM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="weR-WV-gCs"/>
                 <constraint firstItem="49P-JA-K7i" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="yMH-Tq-FCC"/>
                 <constraint firstItem="hlZ-9H-6z1" firstAttribute="top" secondItem="49P-JA-K7i" secondAttribute="bottom" constant="30" id="yUE-nN-J93"/>
             </constraints>

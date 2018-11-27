@@ -18,8 +18,16 @@ struct ViewControllerFactory {
         switch type {
         case .login:
             return LoginViewController()
+        case .home:
+            return HomeViewController()
+        case .countdown:
+            return CountdownTimerViewController()
         case .game:
             return SpeedTextingViewController()
+        case .trials:
+            return TrialsViewController()
+        case .leaderboard:
+            return LeaderboardViewController()
         }
 
     }
