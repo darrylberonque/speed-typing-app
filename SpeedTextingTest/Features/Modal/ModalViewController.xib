@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ModalViewController" customModule="SpeedTextingTest" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonView" destination="1nA-l4-NMi" id="4pl-8j-6Pr"/>
+                <outlet property="headerView" destination="jY2-8T-Knn" id="trD-SE-cfL"/>
+                <outlet property="modalView" destination="LCU-kK-k6f" id="sQB-Om-tFX"/>
+                <outlet property="resultsView" destination="gGy-k1-mRP" id="Jwg-Qb-dYe"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" userLabel="GameModalViewContainer">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHL-WB-wSO" userLabel="Container">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LCU-kK-k6f" userLabel="ModalView">
+                            <rect key="frame" x="57.5" y="104" width="260" height="459.5"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jY2-8T-Knn" userLabel="HeaderView" customClass="HeaderView" customModule="SpeedTextingTest" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="260" height="99.5"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGy-k1-mRP" userLabel="ResultsView" customClass="ResultsView" customModule="SpeedTextingTest" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="99.5" width="260" height="300"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="300" id="AH6-WI-c4K"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1nA-l4-NMi" userLabel="ButtonView" customClass="ButtonView" customModule="SpeedTextingTest" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="399.5" width="260" height="60"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="rDh-Vi-NdS"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="jY2-8T-Knn" firstAttribute="leading" secondItem="LCU-kK-k6f" secondAttribute="leading" id="7lV-bx-2xg"/>
+                                <constraint firstAttribute="height" constant="459.5" id="AKu-3z-Yzf"/>
+                                <constraint firstItem="gGy-k1-mRP" firstAttribute="top" secondItem="jY2-8T-Knn" secondAttribute="bottom" id="G0T-9y-PQe"/>
+                                <constraint firstAttribute="trailing" secondItem="jY2-8T-Knn" secondAttribute="trailing" id="NK0-m1-dDC"/>
+                                <constraint firstAttribute="width" constant="260" id="Rij-iM-wSe"/>
+                                <constraint firstAttribute="bottom" secondItem="1nA-l4-NMi" secondAttribute="bottom" id="SUj-cy-g4I"/>
+                                <constraint firstAttribute="trailing" secondItem="gGy-k1-mRP" secondAttribute="trailing" id="XHW-6F-nWh"/>
+                                <constraint firstItem="gGy-k1-mRP" firstAttribute="leading" secondItem="LCU-kK-k6f" secondAttribute="leading" id="cZs-HU-H7F"/>
+                                <constraint firstItem="jY2-8T-Knn" firstAttribute="top" secondItem="LCU-kK-k6f" secondAttribute="top" id="fcH-aF-SXb"/>
+                                <constraint firstItem="1nA-l4-NMi" firstAttribute="top" secondItem="gGy-k1-mRP" secondAttribute="bottom" id="r9m-CJ-XsU"/>
+                                <constraint firstItem="1nA-l4-NMi" firstAttribute="leading" secondItem="LCU-kK-k6f" secondAttribute="leading" id="uK8-Ug-iWS"/>
+                                <constraint firstAttribute="trailing" secondItem="1nA-l4-NMi" secondAttribute="trailing" id="yPP-HE-I54"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.25490196079999999" green="0.38823529410000002" blue="0.54901960780000003" alpha="0.25" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="LCU-kK-k6f" firstAttribute="centerY" secondItem="NHL-WB-wSO" secondAttribute="centerY" id="BEz-zY-Ktm"/>
+                        <constraint firstItem="LCU-kK-k6f" firstAttribute="centerX" secondItem="NHL-WB-wSO" secondAttribute="centerX" id="xHH-ms-Ikb"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="NHL-WB-wSO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3Gq-yZ-88A"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NHL-WB-wSO" secondAttribute="trailing" id="A65-1o-CG5"/>
+                <constraint firstItem="NHL-WB-wSO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ILb-X7-RBm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NHL-WB-wSO" secondAttribute="bottom" id="t6b-OQ-G4d"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="150.67466266866569"/>
+        </view>
+    </objects>
+</document>

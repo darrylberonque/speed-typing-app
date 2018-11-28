@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2706F4C021AEF8EF008F9750 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706F4BE21AEF8EF008F9750 /* ModalViewController.swift */; };
+		2706F4C121AEF8EF008F9750 /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2706F4BF21AEF8EF008F9750 /* ModalViewController.xib */; };
 		2731E88E21A71A16007C8668 /* MetricsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E88D21A71A16007C8668 /* MetricsModel.swift */; };
 		2731E89021A71CE5007C8668 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E88F21A71CE5007C8668 /* Constants.swift */; };
 		2731E89421A73438007C8668 /* TrialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E89321A73438007C8668 /* TrialModel.swift */; };
@@ -54,15 +56,15 @@
 		27655D8F21ADC54500374CB4 /* MetricViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27655D8E21ADC54500374CB4 /* MetricViewModel.swift */; };
 		27655D9221ADEAEA00374CB4 /* Double+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27655D9121ADEAEA00374CB4 /* Double+extensions.swift */; };
 		276D641721ADA90B00CD269A /* MetricCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276D641621ADA90B00CD269A /* MetricCircleView.swift */; };
-		27828D3221AED27B0094892E /* UserDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27828D3121AED27B0094892E /* UserDisplayViewModel.swift */; };
-		27828D3421AED2890094892E /* UserDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27828D3321AED2890094892E /* UserDisplayView.xib */; };
-		27828D3621AED2B10094892E /* UserDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27828D3521AED2B10094892E /* UserDisplayView.swift */; };
-		27828D3E21AEE01B0094892E /* GameModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27828D3C21AEE01B0094892E /* GameModalViewController.swift */; };
-		27828D3F21AEE01B0094892E /* GameModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27828D3D21AEE01B0094892E /* GameModalViewController.xib */; };
-		27828D4221AEE0450094892E /* TrialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27828D4021AEE0450094892E /* TrialsViewController.swift */; };
-		27828D4321AEE0450094892E /* TrialsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27828D4121AEE0450094892E /* TrialsViewController.xib */; };
-		27828D4621AEE0570094892E /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27828D4421AEE0570094892E /* LeaderboardViewController.swift */; };
-		27828D4721AEE0570094892E /* LeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27828D4521AEE0570094892E /* LeaderboardViewController.xib */; };
+		27828D3221AED27B0094892E /* HeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27828D3121AED27B0094892E /* HeaderViewModel.swift */; };
+		27828D3621AED2B10094892E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27828D3521AED2B10094892E /* HeaderView.swift */; };
+		279E838421AF08ED0088D532 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E838321AF08ED0088D532 /* ResultsView.swift */; };
+		279E838621AF08FD0088D532 /* ResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279E838521AF08FD0088D532 /* ResultsView.xib */; };
+		279E838821AF09080088D532 /* ResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E838721AF09080088D532 /* ResultsViewModel.swift */; };
+		279E838A21AF10830088D532 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E838921AF10830088D532 /* ButtonView.swift */; };
+		279E838C21AF10910088D532 /* ButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279E838B21AF10910088D532 /* ButtonView.xib */; };
+		279E838E21AF109C0088D532 /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E838D21AF109C0088D532 /* ButtonViewModel.swift */; };
+		279E839021AF2D3A0088D532 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279E838F21AF2C1E0088D532 /* HeaderView.xib */; };
 		768C7C7E6A2861A1477EB753 /* Pods_SpeedTextingTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B931DB5E61F68B37088F7D55 /* Pods_SpeedTextingTestTests.framework */; };
 		E1CDED67C4FC25F7907DA967 /* Pods_SpeedTextingTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA195E4E02839643B9E9284 /* Pods_SpeedTextingTestUITests.framework */; };
 		E3D39BFD9909E09FCDCCEFCA /* Pods_SpeedTextingTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A61EDA57E5B3C5920525BBC /* Pods_SpeedTextingTest.framework */; };
@@ -88,6 +90,8 @@
 /* Begin PBXFileReference section */
 		0F603B117D9DEAE1B19631F6 /* Pods-SpeedTextingTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTextingTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTextingTest/Pods-SpeedTextingTest.debug.xcconfig"; sourceTree = "<group>"; };
 		1A83BD0EDF7A50D6AAF8D11C /* Pods-SpeedTextingTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTextingTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTextingTestTests/Pods-SpeedTextingTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		2706F4BE21AEF8EF008F9750 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		2706F4BF21AEF8EF008F9750 /* ModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
 		2731E88D21A71A16007C8668 /* MetricsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsModel.swift; sourceTree = "<group>"; };
 		2731E88F21A71CE5007C8668 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2731E89321A73438007C8668 /* TrialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialModel.swift; sourceTree = "<group>"; };
@@ -142,15 +146,15 @@
 		27655D8E21ADC54500374CB4 /* MetricViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricViewModel.swift; sourceTree = "<group>"; };
 		27655D9121ADEAEA00374CB4 /* Double+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+extensions.swift"; sourceTree = "<group>"; };
 		276D641621ADA90B00CD269A /* MetricCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCircleView.swift; sourceTree = "<group>"; };
-		27828D3121AED27B0094892E /* UserDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDisplayViewModel.swift; sourceTree = "<group>"; };
-		27828D3321AED2890094892E /* UserDisplayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDisplayView.xib; sourceTree = "<group>"; };
-		27828D3521AED2B10094892E /* UserDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDisplayView.swift; sourceTree = "<group>"; };
-		27828D3C21AEE01B0094892E /* GameModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModalViewController.swift; sourceTree = "<group>"; };
-		27828D3D21AEE01B0094892E /* GameModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameModalViewController.xib; sourceTree = "<group>"; };
-		27828D4021AEE0450094892E /* TrialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialsViewController.swift; sourceTree = "<group>"; };
-		27828D4121AEE0450094892E /* TrialsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrialsViewController.xib; sourceTree = "<group>"; };
-		27828D4421AEE0570094892E /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
-		27828D4521AEE0570094892E /* LeaderboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardViewController.xib; sourceTree = "<group>"; };
+		27828D3121AED27B0094892E /* HeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModel.swift; sourceTree = "<group>"; };
+		27828D3521AED2B10094892E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		279E838321AF08ED0088D532 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		279E838521AF08FD0088D532 /* ResultsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsView.xib; sourceTree = "<group>"; };
+		279E838721AF09080088D532 /* ResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModel.swift; sourceTree = "<group>"; };
+		279E838921AF10830088D532 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		279E838B21AF10910088D532 /* ButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonView.xib; sourceTree = "<group>"; };
+		279E838D21AF109C0088D532 /* ButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModel.swift; sourceTree = "<group>"; };
+		279E838F21AF2C1E0088D532 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HeaderView.xib; path = "/Users/darryl.beronque/Developer/speed-texting/SpeedTextingTest/SpeedTextingTest/Views/ModalViews/HeaderView/HeaderView.xib"; sourceTree = "<absolute>"; };
 		3A61EDA57E5B3C5920525BBC /* Pods_SpeedTextingTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeedTextingTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D05984E064E1B59A02E4D8 /* Pods-SpeedTextingTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTextingTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTextingTestUITests/Pods-SpeedTextingTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ACAFCF25992D21D1CE5C55B3 /* Pods-SpeedTextingTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTextingTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTextingTestTests/Pods-SpeedTextingTestTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -405,9 +409,8 @@
 		27655D9621AECA0100374CB4 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
-				27828D3721AEDF440094892E /* GameModalVC */,
-				27828D3821AEDF630094892E /* TrialsModalVC */,
-				27828D3921AEDF7B0094892E /* LeaderboardModalVC */,
+				2706F4BE21AEF8EF008F9750 /* ModalViewController.swift */,
+				2706F4BF21AEF8EF008F9750 /* ModalViewController.xib */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -415,62 +418,41 @@
 		27655D9721AECA3100374CB4 /* ModalViews */ = {
 			isa = PBXGroup;
 			children = (
-				27828D2E21AED1FB0094892E /* ModalSubviews */,
+				27828D2F21AED2120094892E /* HeaderView */,
+				27828D2E21AED1FB0094892E /* ResultsView */,
+				27828D3021AED23C0094892E /* ButtonView */,
 			);
 			path = ModalViews;
 			sourceTree = "<group>";
 		};
-		27828D2E21AED1FB0094892E /* ModalSubviews */ = {
+		27828D2E21AED1FB0094892E /* ResultsView */ = {
 			isa = PBXGroup;
 			children = (
-				27828D2F21AED2120094892E /* UserDisplay */,
-				27828D3021AED23C0094892E /* PostGameButtonView */,
+				279E838521AF08FD0088D532 /* ResultsView.xib */,
+				279E838321AF08ED0088D532 /* ResultsView.swift */,
+				279E838721AF09080088D532 /* ResultsViewModel.swift */,
 			);
-			path = ModalSubviews;
+			path = ResultsView;
 			sourceTree = "<group>";
 		};
-		27828D2F21AED2120094892E /* UserDisplay */ = {
+		27828D2F21AED2120094892E /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
-				27828D3321AED2890094892E /* UserDisplayView.xib */,
-				27828D3521AED2B10094892E /* UserDisplayView.swift */,
-				27828D3121AED27B0094892E /* UserDisplayViewModel.swift */,
+				279E838F21AF2C1E0088D532 /* HeaderView.xib */,
+				27828D3521AED2B10094892E /* HeaderView.swift */,
+				27828D3121AED27B0094892E /* HeaderViewModel.swift */,
 			);
-			path = UserDisplay;
+			path = HeaderView;
 			sourceTree = "<group>";
 		};
-		27828D3021AED23C0094892E /* PostGameButtonView */ = {
+		27828D3021AED23C0094892E /* ButtonView */ = {
 			isa = PBXGroup;
 			children = (
+				279E838B21AF10910088D532 /* ButtonView.xib */,
+				279E838921AF10830088D532 /* ButtonView.swift */,
+				279E838D21AF109C0088D532 /* ButtonViewModel.swift */,
 			);
-			path = PostGameButtonView;
-			sourceTree = "<group>";
-		};
-		27828D3721AEDF440094892E /* GameModalVC */ = {
-			isa = PBXGroup;
-			children = (
-				27828D3C21AEE01B0094892E /* GameModalViewController.swift */,
-				27828D3D21AEE01B0094892E /* GameModalViewController.xib */,
-			);
-			path = GameModalVC;
-			sourceTree = "<group>";
-		};
-		27828D3821AEDF630094892E /* TrialsModalVC */ = {
-			isa = PBXGroup;
-			children = (
-				27828D4021AEE0450094892E /* TrialsViewController.swift */,
-				27828D4121AEE0450094892E /* TrialsViewController.xib */,
-			);
-			path = TrialsModalVC;
-			sourceTree = "<group>";
-		};
-		27828D3921AEDF7B0094892E /* LeaderboardModalVC */ = {
-			isa = PBXGroup;
-			children = (
-				27828D4421AEE0570094892E /* LeaderboardViewController.swift */,
-				27828D4521AEE0570094892E /* LeaderboardViewController.xib */,
-			);
-			path = LeaderboardModalVC;
+			path = ButtonView;
 			sourceTree = "<group>";
 		};
 		37FA00EAA733C4A07E37BED7 /* Frameworks */ = {
@@ -605,15 +587,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27828D4721AEE0570094892E /* LeaderboardViewController.xib in Resources */,
+				279E839021AF2D3A0088D532 /* HeaderView.xib in Resources */,
 				2731E8B921AC2CF7007C8668 /* LoginViewController.xib in Resources */,
 				2731E8DC21AD0855007C8668 /* TrialsViewController.xib in Resources */,
-				27828D3F21AEE01B0094892E /* GameModalViewController.xib in Resources */,
+				279E838621AF08FD0088D532 /* ResultsView.xib in Resources */,
+				2706F4C121AEF8EF008F9750 /* ModalViewController.xib in Resources */,
 				2731E8E021AD0876007C8668 /* LeaderboardViewController.xib in Resources */,
 				275C66AB21A59E5000FA1439 /* LaunchScreen.storyboard in Resources */,
-				27828D4321AEE0450094892E /* TrialsViewController.xib in Resources */,
-				27828D3421AED2890094892E /* UserDisplayView.xib in Resources */,
 				275C66A821A59E5000FA1439 /* Assets.xcassets in Resources */,
+				279E838C21AF10910088D532 /* ButtonView.xib in Resources */,
 				275C66CF21A5A14300FA1439 /* SpeedTextingViewController.xib in Resources */,
 				27655D8B21ADC12C00374CB4 /* MetricView.xib in Resources */,
 				2731E8E421AD7674007C8668 /* CountdownTimerViewController.xib in Resources */,
@@ -782,38 +764,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27828D3221AED27B0094892E /* UserDisplayViewModel.swift in Sources */,
+				27828D3221AED27B0094892E /* HeaderViewModel.swift in Sources */,
 				275C66D321A5B8A700FA1439 /* SpeedTextingViewController.swift in Sources */,
 				2731E88E21A71A16007C8668 /* MetricsModel.swift in Sources */,
 				2731E89421A73438007C8668 /* TrialModel.swift in Sources */,
 				2731E8D021ACE607007C8668 /* HomeViewModel.swift in Sources */,
 				2731E8B521AC2832007C8668 /* LoginViewController.swift in Sources */,
+				279E838E21AF109C0088D532 /* ButtonViewModel.swift in Sources */,
 				2731E89C21A7CF61007C8668 /* APIClient.swift in Sources */,
 				2731E8CD21AC8195007C8668 /* LoginViewController+extensions.swift in Sources */,
+				279E838A21AF10830088D532 /* ButtonView.swift in Sources */,
 				275C66A121A59E4F00FA1439 /* AppDelegate.swift in Sources */,
 				27655D8D21ADC53200374CB4 /* MetricCircleViewModel.swift in Sources */,
-				27828D3E21AEE01B0094892E /* GameModalViewController.swift in Sources */,
+				2706F4C021AEF8EF008F9750 /* ModalViewController.swift in Sources */,
 				2731E8BB21AC3111007C8668 /* UIColor+extensions.swift in Sources */,
 				2731E8C321AC54E5007C8668 /* FacebookAuthenticator.swift in Sources */,
 				27655D8921ADC0D300374CB4 /* MetricView.swift in Sources */,
 				2731E8C721AC56B2007C8668 /* AuthenticatorFactory.swift in Sources */,
-				27828D4221AEE0450094892E /* TrialsViewController.swift in Sources */,
 				27655D9221ADEAEA00374CB4 /* Double+extensions.swift in Sources */,
 				2731E8D221ACE615007C8668 /* HomeViewController.swift in Sources */,
 				2731E8B021AA2AB6007C8668 /* UserModel.swift in Sources */,
 				2731E89821A7C56E007C8668 /* URLRequestBuilder.swift in Sources */,
 				2731E8B321AC27B8007C8668 /* ViewControllerPresenter.swift in Sources */,
 				2731E8E221AD7665007C8668 /* CountdownTimerViewController.swift in Sources */,
-				27828D4621AEE0570094892E /* LeaderboardViewController.swift in Sources */,
 				2731E8C521AC5593007C8668 /* FBSignIn.swift in Sources */,
 				2731E89E21A85030007C8668 /* RequestManager.swift in Sources */,
 				2731E89A21A7CD3C007C8668 /* URLRequest+extensions.swift in Sources */,
 				275C66D521A5B95E00FA1439 /* SpeedTextingViewModel.swift in Sources */,
-				27828D3621AED2B10094892E /* UserDisplayView.swift in Sources */,
+				27828D3621AED2B10094892E /* HeaderView.swift in Sources */,
 				2731E8DA21AD0842007C8668 /* TrialsViewController.swift in Sources */,
 				2731E89021A71CE5007C8668 /* Constants.swift in Sources */,
+				279E838421AF08ED0088D532 /* ResultsView.swift in Sources */,
 				27655D8F21ADC54500374CB4 /* MetricViewModel.swift in Sources */,
 				276D641721ADA90B00CD269A /* MetricCircleView.swift in Sources */,
+				279E838821AF09080088D532 /* ResultsViewModel.swift in Sources */,
 				2731E8B721AC2B91007C8668 /* ViewControllerFactory.swift in Sources */,
 				2731E8BD21AC3206007C8668 /* UIButton+extensions.swift in Sources */,
 				2731E8CB21AC6F52007C8668 /* GoogleAuthenticator.swift in Sources */,

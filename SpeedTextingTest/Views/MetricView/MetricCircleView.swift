@@ -81,6 +81,7 @@ class MetricCircleView: UIView {
     }
 
     func displayMetricCircle(strokeEnd: Double) {
+        viewModel.strokeEnd.accept(strokeEnd)
         metricCirclelayer.strokeEnd = CGFloat(strokeEnd)
     }
 }

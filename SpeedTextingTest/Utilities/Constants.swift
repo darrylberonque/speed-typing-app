@@ -17,6 +17,7 @@ class Constants {
     static let countdownTimerFinalText = "Go!"
     static let metricCircleStartAngle = (3/2) * CGFloat.pi
     static let metricCircleEndAngle = metricCircleStartAngle + (2 * CGFloat.pi)
+    static let backButtonBorderWidth = 2.0
 
 
     // MARK: - Login Constants

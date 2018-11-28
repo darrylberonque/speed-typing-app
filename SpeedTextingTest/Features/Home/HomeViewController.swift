@@ -59,15 +59,10 @@ final class HomeViewController: UIViewController {
         startTypingButton.rx.tap.asObservable()
             .single()
             .subscribe(onNext: { [unowned self] _ in
-                ViewControllerPresenter.presentViewController(presenter: self, type: .countdown)
+//                let modal = ModalViewController()
+//                self.view.addSubview(modal.view)
+                 ViewControllerPresenter.presentViewController(presenter: self, type: .countdown)
             })
             .disposed(by: disposeBag)
-
-//        let testVal = 80.0
-//        testMetricCircle.viewModel = MetricViewModel(type: .accuracy, value: testVal, displayType: .display)
-//        timer.asObservable().subscribe(onNext: { time in
-//            self.val += 10
-//            self.testMetricCircle.updateGameState(value: self.val)
-//        }).disposed(by: disposeBag)
     }
 }

@@ -50,6 +50,7 @@ final class SpeedTextingViewModel {
 
                 let font = UIFont(name: "HelveticaNeue-Medium", size: 13)!
                 let attributedParagraphText = NSMutableAttributedString(string: randomParagraph)
+                attributedParagraphText.addAttribute(.foregroundColor, value: UIColor.blueThemeColor, range: NSRange(location: 0, length: randomParagraph.count-1))
                 attributedParagraphText.addAttribute(.font, value: font, range: NSRange(location: 0, length: randomParagraph.count-1))
 
                 return attributedParagraphText
@@ -78,6 +79,10 @@ final class SpeedTextingViewModel {
 
                         attributedText.addAttribute(.foregroundColor, value: correctColorIndicator, range: NSRange(location: i, length: 1))
                     }
+
+                    let font = UIFont(name: "HelveticaNeue-Medium", size: 13)!
+                    attributedText.addAttribute(.font, value: font, range: NSRange(location: 0, length: paragraph.count-1))
+
                 } else {
                     // TODO: Show modal of typing test results, update trial model with time, capture current time as well
                     self.didFinishTest = true
