@@ -15,11 +15,11 @@ final class SpeedTextingViewController: UIViewController {
 
     @IBOutlet private weak var paragraphTextView: UITextView!
     @IBOutlet private weak var userTextInput: UITextField!
-
-    @IBOutlet private weak var cpmLabel: UILabel!
-    @IBOutlet private weak var wpmLabel: UILabel!
-    @IBOutlet private weak var accuracyLabel: UILabel!
+    @IBOutlet private weak var accuracyMetricView: MetricView!
+    @IBOutlet private weak var wpmMetricView: MetricView!
+    @IBOutlet private weak var cpmMetricView: MetricView!
     @IBOutlet private weak var timeLabel: UILabel!
+    @IBOutlet private weak var timeViewContainer: UIView!
 
     private var viewModel = SpeedTextingViewModel()
     private var disposeBag = DisposeBag()
@@ -35,9 +35,21 @@ final class SpeedTextingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupMetricCounters()
+        setupBindings()
+        setupUI()
+    }
+
+    private func setupMetricCounters() {
+        accuracyMetricView.viewModel = MetricViewModel(type: .accuracy, value: 0.0, displayType: .live)
+        wpmMetricView.viewModel = MetricViewModel(type: .wpm, value: 0.0, displayType: .live)
+        cpmMetricView.viewModel = MetricViewModel(type: .cpm, value: 0.0, displayType: .live)
+    }
+
+    private func setupUI() {
         IQKeyboardManager.shared.enable = true
         userTextInput.becomeFirstResponder()
-        setupBindings()
+        timeViewContainer.addShadow(radius: 3.0, color: .black, opacity: 0.25)
     }
 
     private func setupBindings() {
@@ -48,11 +60,12 @@ final class SpeedTextingViewController: UIViewController {
             .disposed(by: disposeBag)
 
         viewModel.currentParagraphMutableText.asDriver(onErrorJustReturn: NSMutableAttributedString(string:"")).drive(onNext: { [unowned self] currentParagraph in
+            self.paragraphTextView.attributedText = currentParagraph
+            self.paragraphTextView.textAlignment = .center
+
             if self.viewModel.didFinishTest {
                 // TODO: Add logic for showing modal here
             }
-
-            self.paragraphTextView.attributedText = currentParagraph
         }).disposed(by: disposeBag)
 
         viewModel.timer.asObservable().subscribe(onNext: { [unowned self] time in
@@ -60,15 +73,15 @@ final class SpeedTextingViewController: UIViewController {
         }).disposed(by: disposeBag)
 
         viewModel.cpm.asDriver().drive(onNext: { [unowned self] cpm in
-            self.cpmLabel.text = "\(cpm.rounded(.toNearestOrAwayFromZero))"
+            self.cpmMetricView.updateGameState(value: cpm.rounded(.toNearestOrAwayFromZero))
         }).disposed(by: disposeBag)
 
         viewModel.wpm.asDriver().drive(onNext: { [unowned self] wpm in
-            self.wpmLabel.text = "\(wpm.rounded(.toNearestOrAwayFromZero))"
+            self.wpmMetricView.updateGameState(value: wpm.rounded(.toNearestOrAwayFromZero))
         }).disposed(by: disposeBag)
 
         viewModel.accuracy.asDriver().drive(onNext: { [unowned self] accuracy in
-            self.accuracyLabel.text = "\(accuracy) %"
+            self.accuracyMetricView.updateGameState(value: accuracy)
         }).disposed(by: disposeBag)
     }
 }

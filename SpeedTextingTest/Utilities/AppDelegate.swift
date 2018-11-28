@@ -16,10 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         window = UIWindow()
 
-        // TODO: - Change Speed Texting VC to home page
         let rootVC = UserDefaults.standard.object(forKey: Constants.cachedID) == nil ? LoginViewController() : HomeViewController()
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()

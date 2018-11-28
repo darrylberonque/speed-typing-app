@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Constants {
     // MARK: - UI Constants
@@ -14,6 +15,9 @@ class Constants {
     static let leaderboardImageName = "leaderboard"
     static let trialsImageName = "trials"
     static let countdownTimerFinalText = "Go!"
+    static let metricCircleStartAngle = (3/2) * CGFloat.pi
+    static let metricCircleEndAngle = metricCircleStartAngle + (2 * CGFloat.pi)
+
 
     // MARK: - Login Constants
     static let defaultProfileImageURL = "http://mainenordmenn.com/wp-content/uploads/2017/09/Maine-Nordmenn-Board-Generic-Profile.jpg"
@@ -32,4 +36,20 @@ class Constants {
     static let contentType = "Content-Type"
     static let accept = "Accept"
     static let rootQueryString = "data"
+
+    // MARK: - Metric View Constants
+    static let metricCircleLineWidth = 30
+    static let circleAnimationDuration = 1.0
+
+    static let lowStrokeEndLimit = 0.33
+    static let mediumStrokeEndLimit = 0.66
+    static let highStrokeEndLimit = 1.0
+
+    static let cpmMax = 450
+    static let wpmMax = 90
+    static let accuracyMax = 100
+
+    static let strokeEndKeypath = "strokeEnd"
+    static let metricCircleAnimateKeypath = "animateMetricCircle"
+
 }

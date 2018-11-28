@@ -62,5 +62,12 @@ final class HomeViewController: UIViewController {
                 ViewControllerPresenter.presentViewController(presenter: self, type: .countdown)
             })
             .disposed(by: disposeBag)
+
+//        let testVal = 80.0
+//        testMetricCircle.viewModel = MetricViewModel(type: .accuracy, value: testVal, displayType: .display)
+//        timer.asObservable().subscribe(onNext: { time in
+//            self.val += 10
+//            self.testMetricCircle.updateGameState(value: self.val)
+//        }).disposed(by: disposeBag)
     }
 }

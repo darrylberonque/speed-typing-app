@@ -65,9 +65,9 @@ final class SpeedTextingViewModel {
 
                         if i <= input.count-1 {
                             let textIndex = input.index(input.startIndex, offsetBy: i)
-                            correctColorIndicator = paragraph[paragraphIndex] == input[textIndex] ? .green : .red
+                            correctColorIndicator = paragraph[paragraphIndex] == input[textIndex] ? .highScoreColor : .lowScoreColor
                         } else {
-                            correctColorIndicator = .black
+                            correctColorIndicator = .blueThemeColor
                         }
 
                         attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: correctColorIndicator, range: NSRange(location: i, length: 1))
