@@ -53,7 +53,13 @@
 		27655D8D21ADC53200374CB4 /* MetricCircleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27655D8C21ADC53200374CB4 /* MetricCircleViewModel.swift */; };
 		27655D8F21ADC54500374CB4 /* MetricViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27655D8E21ADC54500374CB4 /* MetricViewModel.swift */; };
 		27655D9221ADEAEA00374CB4 /* Double+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27655D9121ADEAEA00374CB4 /* Double+extensions.swift */; };
+		27655D9A21AECAAB00374CB4 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27655D9821AECAAB00374CB4 /* ModalViewController.swift */; };
+		27655D9B21AECAAB00374CB4 /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27655D9921AECAAB00374CB4 /* ModalViewController.xib */; };
 		276D641721ADA90B00CD269A /* MetricCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276D641621ADA90B00CD269A /* MetricCircleView.swift */; };
+		27828D2D21AECC8C0094892E /* ModalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27828D2C21AECC8C0094892E /* ModalFactory.swift */; };
+		27828D3221AED27B0094892E /* UserDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27828D3121AED27B0094892E /* UserDisplayViewModel.swift */; };
+		27828D3421AED2890094892E /* UserDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27828D3321AED2890094892E /* UserDisplayView.xib */; };
+		27828D3621AED2B10094892E /* UserDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27828D3521AED2B10094892E /* UserDisplayView.swift */; };
 		2FFC46267DC48727097B8016 /* Pods_SpeedTextingTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB8FD2A5B6DCBE613FEDE87F /* Pods_SpeedTextingTest.framework */; };
 		9A4B6C62566CE6B60EBC889F /* Pods_SpeedTextingTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EEFFF0B7836243F6A9AEB4 /* Pods_SpeedTextingTestUITests.framework */; };
 		F08E3EF1637F87852B7084C9 /* Pods_SpeedTextingTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3FBC0206C4104D50BBCB4A6 /* Pods_SpeedTextingTestTests.framework */; };
@@ -130,7 +136,13 @@
 		27655D8C21ADC53200374CB4 /* MetricCircleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCircleViewModel.swift; sourceTree = "<group>"; };
 		27655D8E21ADC54500374CB4 /* MetricViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricViewModel.swift; sourceTree = "<group>"; };
 		27655D9121ADEAEA00374CB4 /* Double+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+extensions.swift"; sourceTree = "<group>"; };
+		27655D9821AECAAB00374CB4 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		27655D9921AECAAB00374CB4 /* ModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
 		276D641621ADA90B00CD269A /* MetricCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCircleView.swift; sourceTree = "<group>"; };
+		27828D2C21AECC8C0094892E /* ModalFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalFactory.swift; sourceTree = "<group>"; };
+		27828D3121AED27B0094892E /* UserDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDisplayViewModel.swift; sourceTree = "<group>"; };
+		27828D3321AED2890094892E /* UserDisplayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDisplayView.xib; sourceTree = "<group>"; };
+		27828D3521AED2B10094892E /* UserDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDisplayView.swift; sourceTree = "<group>"; };
 		339325000EB9950E99289F6C /* Pods-SpeedTextingTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTextingTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTextingTestTests/Pods-SpeedTextingTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		43CFE2E9F782C5F34CC614FB /* Pods-SpeedTextingTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTextingTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTextingTestUITests/Pods-SpeedTextingTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4A744AA7C82775BB00744927 /* Pods-SpeedTextingTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTextingTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTextingTest/Pods-SpeedTextingTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -298,17 +310,11 @@
 		275C669F21A59E4F00FA1439 /* SpeedTextingTest */ = {
 			isa = PBXGroup;
 			children = (
-				2731E8C021AC3761007C8668 /* Presenter */,
-				2731E8B121AC26D8007C8668 /* Login */,
-				2731E8CE21ACE529007C8668 /* Home */,
-				275C66D021A5B1E500FA1439 /* Game */,
-				2731E8D821AD081D007C8668 /* Trials */,
-				2731E8D721AD07FB007C8668 /* Leaderboard */,
-				2731E89521A7A89B007C8668 /* Networking */,
+				27655D9321AE59F300374CB4 /* Features */,
+				27655D9421AE5A0700374CB4 /* Views */,
 				2731E89621A7A8B2007C8668 /* Models */,
 				2731E89F21A86034007C8668 /* Extensions */,
 				275C66D121A5B23400FA1439 /* Utilities */,
-				27655D9021ADC54E00374CB4 /* MetricView */,
 				275C66AC21A59E5000FA1439 /* Info.plist */,
 			);
 			path = SpeedTextingTest;
@@ -366,6 +372,82 @@
 				27655D8C21ADC53200374CB4 /* MetricCircleViewModel.swift */,
 			);
 			path = MetricView;
+			sourceTree = "<group>";
+		};
+		27655D9321AE59F300374CB4 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				2731E8C021AC3761007C8668 /* Presenter */,
+				2731E89521A7A89B007C8668 /* Networking */,
+				2731E8B121AC26D8007C8668 /* Login */,
+				2731E8CE21ACE529007C8668 /* Home */,
+				275C66D021A5B1E500FA1439 /* Game */,
+				2731E8D821AD081D007C8668 /* Trials */,
+				2731E8D721AD07FB007C8668 /* Leaderboard */,
+				27655D9621AECA0100374CB4 /* Modal */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		27655D9421AE5A0700374CB4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27655D9721AECA3100374CB4 /* ModalViews */,
+				27655D9521AE5A8400374CB4 /* NavBarView */,
+				27655D9021ADC54E00374CB4 /* MetricView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		27655D9521AE5A8400374CB4 /* NavBarView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NavBarView;
+			sourceTree = "<group>";
+		};
+		27655D9621AECA0100374CB4 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				27655D9921AECAAB00374CB4 /* ModalViewController.xib */,
+				27655D9821AECAAB00374CB4 /* ModalViewController.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		27655D9721AECA3100374CB4 /* ModalViews */ = {
+			isa = PBXGroup;
+			children = (
+				27828D2E21AED1FB0094892E /* ModalSubviews */,
+				27828D2C21AECC8C0094892E /* ModalFactory.swift */,
+			);
+			path = ModalViews;
+			sourceTree = "<group>";
+		};
+		27828D2E21AED1FB0094892E /* ModalSubviews */ = {
+			isa = PBXGroup;
+			children = (
+				27828D2F21AED2120094892E /* UserDisplay */,
+				27828D3021AED23C0094892E /* PostGameButtonView */,
+			);
+			path = ModalSubviews;
+			sourceTree = "<group>";
+		};
+		27828D2F21AED2120094892E /* UserDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				27828D3321AED2890094892E /* UserDisplayView.xib */,
+				27828D3521AED2B10094892E /* UserDisplayView.swift */,
+				27828D3121AED27B0094892E /* UserDisplayViewModel.swift */,
+			);
+			path = UserDisplay;
+			sourceTree = "<group>";
+		};
+		27828D3021AED23C0094892E /* PostGameButtonView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PostGameButtonView;
 			sourceTree = "<group>";
 		};
 		9AD9162B503DCF7636B846CB /* Pods */ = {
@@ -494,7 +576,9 @@
 				2731E8DC21AD0855007C8668 /* TrialsViewController.xib in Resources */,
 				2731E8E021AD0876007C8668 /* LeaderboardViewController.xib in Resources */,
 				275C66AB21A59E5000FA1439 /* LaunchScreen.storyboard in Resources */,
+				27828D3421AED2890094892E /* UserDisplayView.xib in Resources */,
 				275C66A821A59E5000FA1439 /* Assets.xcassets in Resources */,
+				27655D9B21AECAAB00374CB4 /* ModalViewController.xib in Resources */,
 				275C66CF21A5A14300FA1439 /* SpeedTextingViewController.xib in Resources */,
 				27655D8B21ADC12C00374CB4 /* MetricView.xib in Resources */,
 				2731E8E421AD7674007C8668 /* CountdownTimerViewController.xib in Resources */,
@@ -647,6 +731,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27828D3221AED27B0094892E /* UserDisplayViewModel.swift in Sources */,
 				275C66D321A5B8A700FA1439 /* SpeedTextingViewController.swift in Sources */,
 				2731E88E21A71A16007C8668 /* MetricsModel.swift in Sources */,
 				2731E89421A73438007C8668 /* TrialModel.swift in Sources */,
@@ -658,11 +743,13 @@
 				27655D8D21ADC53200374CB4 /* MetricCircleViewModel.swift in Sources */,
 				2731E8BB21AC3111007C8668 /* UIColor+extensions.swift in Sources */,
 				2731E8C321AC54E5007C8668 /* FacebookAuthenticator.swift in Sources */,
+				27828D2D21AECC8C0094892E /* ModalFactory.swift in Sources */,
 				27655D8921ADC0D300374CB4 /* MetricView.swift in Sources */,
 				2731E8C721AC56B2007C8668 /* AuthenticatorFactory.swift in Sources */,
 				27655D9221ADEAEA00374CB4 /* Double+extensions.swift in Sources */,
 				2731E8D221ACE615007C8668 /* HomeViewController.swift in Sources */,
 				2731E8B021AA2AB6007C8668 /* UserModel.swift in Sources */,
+				27655D9A21AECAAB00374CB4 /* ModalViewController.swift in Sources */,
 				2731E89821A7C56E007C8668 /* URLRequestBuilder.swift in Sources */,
 				2731E8B321AC27B8007C8668 /* ViewControllerPresenter.swift in Sources */,
 				2731E8E221AD7665007C8668 /* CountdownTimerViewController.swift in Sources */,
@@ -670,6 +757,7 @@
 				2731E89E21A85030007C8668 /* RequestManager.swift in Sources */,
 				2731E89A21A7CD3C007C8668 /* URLRequest+extensions.swift in Sources */,
 				275C66D521A5B95E00FA1439 /* SpeedTextingViewModel.swift in Sources */,
+				27828D3621AED2B10094892E /* UserDisplayView.swift in Sources */,
 				2731E8DA21AD0842007C8668 /* TrialsViewController.swift in Sources */,
 				2731E89021A71CE5007C8668 /* Constants.swift in Sources */,
 				27655D8F21ADC54500374CB4 /* MetricViewModel.swift in Sources */,

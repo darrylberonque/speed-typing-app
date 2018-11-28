@@ -42,11 +42,17 @@ final class SpeedTextingViewModel {
             .single()
             .map({ [weak self] paragraphsModel in
                 guard let welf = self else { return NSMutableAttributedString(string: "") }
+
                 let paragraphs = paragraphsModel.paragraphs
                 let randomIndex = Int.randomIntInRange(low: 0, high: paragraphs.count-1)
                 let randomParagraph = paragraphs[randomIndex].content
                 welf.paragraphText = randomParagraph
-                return NSMutableAttributedString(string: randomParagraph)
+
+                let font = UIFont(name: "HelveticaNeue-Medium", size: 13)!
+                let attributedParagraphText = NSMutableAttributedString(string: randomParagraph)
+                attributedParagraphText.addAttribute(.font, value: font, range: NSRange(location: 0, length: randomParagraph.count-1))
+
+                return attributedParagraphText
             })
             .bind(to: currentParagraphMutableText)
             .disposed(by: disposeBag)
@@ -70,7 +76,7 @@ final class SpeedTextingViewModel {
                             correctColorIndicator = .blueThemeColor
                         }
 
-                        attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: correctColorIndicator, range: NSRange(location: i, length: 1))
+                        attributedText.addAttribute(.foregroundColor, value: correctColorIndicator, range: NSRange(location: i, length: 1))
                     }
                 } else {
                     // TODO: Show modal of typing test results, update trial model with time, capture current time as well

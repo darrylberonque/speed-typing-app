@@ -62,7 +62,6 @@ final class SpeedTextingViewController: UIViewController {
         viewModel.currentParagraphMutableText.asDriver(onErrorJustReturn: NSMutableAttributedString(string:"")).drive(onNext: { [unowned self] currentParagraph in
             self.paragraphTextView.attributedText = currentParagraph
             self.paragraphTextView.textAlignment = .center
-
             if self.viewModel.didFinishTest {
                 // TODO: Add logic for showing modal here
             }

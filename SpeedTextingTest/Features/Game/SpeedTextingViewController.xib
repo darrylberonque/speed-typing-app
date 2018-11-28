@@ -36,9 +36,9 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="C4D-Zi-Iql">
                     <rect key="frame" x="94" y="202" width="187" height="263"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <color key="textColor" red="0.25490196079999999" green="0.38823529410000002" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2k-Ii-Sxi" userLabel="Time">
@@ -136,18 +136,19 @@
                 <constraint firstItem="hlZ-9H-6z1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="16S-OT-j3C"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dyX-SU-PFC" secondAttribute="trailing" constant="15" id="4Vc-Hm-8Km"/>
                 <constraint firstItem="hlZ-9H-6z1" firstAttribute="top" secondItem="C4D-Zi-Iql" secondAttribute="bottom" constant="19.5" id="9tb-P4-cdV"/>
+                <constraint firstItem="hlZ-9H-6z1" firstAttribute="top" secondItem="dyX-SU-PFC" secondAttribute="bottom" constant="47.5" id="LNT-ki-l7s"/>
                 <constraint firstItem="C4D-Zi-Iql" firstAttribute="leading" secondItem="r2k-Ii-Sxi" secondAttribute="trailing" constant="4" id="NHp-kZ-AGo"/>
                 <constraint firstItem="f8r-OM-eUy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="OOa-1z-60F"/>
                 <constraint firstItem="dyX-SU-PFC" firstAttribute="top" secondItem="zbO-ug-8GE" secondAttribute="bottom" constant="35" id="QEg-9z-p8g"/>
                 <constraint firstItem="C4D-Zi-Iql" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TYv-Sz-pTZ"/>
                 <constraint firstItem="hlZ-9H-6z1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="U0V-eD-AcJ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="hlZ-9H-6z1" secondAttribute="bottom" constant="152.5" id="WT0-pm-Mkz"/>
                 <constraint firstAttribute="trailing" secondItem="zbO-ug-8GE" secondAttribute="trailing" constant="15" id="X6y-Bs-ySe"/>
                 <constraint firstItem="zbO-ug-8GE" firstAttribute="leading" secondItem="C4D-Zi-Iql" secondAttribute="trailing" constant="4" id="beX-tc-kZR"/>
                 <constraint firstItem="r2k-Ii-Sxi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="cFO-gf-Ibn"/>
                 <constraint firstItem="zbO-ug-8GE" firstAttribute="top" secondItem="C4D-Zi-Iql" secondAttribute="top" id="elW-vu-lZd"/>
                 <constraint firstItem="f8r-OM-eUy" firstAttribute="top" secondItem="r2k-Ii-Sxi" secondAttribute="bottom" constant="35" id="gUL-2l-7xP"/>
                 <constraint firstItem="C4D-Zi-Iql" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="onU-5R-kkJ"/>
+                <constraint firstItem="hlZ-9H-6z1" firstAttribute="top" secondItem="f8r-OM-eUy" secondAttribute="bottom" constant="47.5" id="s17-v8-MSF"/>
                 <constraint firstItem="r2k-Ii-Sxi" firstAttribute="top" secondItem="C4D-Zi-Iql" secondAttribute="top" id="wgA-Vk-Vd4"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
