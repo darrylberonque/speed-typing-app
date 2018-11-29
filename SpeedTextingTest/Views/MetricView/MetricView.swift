@@ -58,7 +58,7 @@ final class MetricView: UIView {
 
     private func initGameState() {
         viewModel.value.asDriver().drive(onNext: { [unowned self] value in
-            self.metricValueLabel.text = value < Double(self.viewModel.type.maxValue) ? String(value) : String(self.viewModel.type.maxValue)
+            self.metricValueLabel.text = String(value)
         }).disposed(by: disposeBag)
     }
 
@@ -69,7 +69,7 @@ final class MetricView: UIView {
         let increment = viewModel.value.value / Constants.circleAnimationDuration
         Observable<Int>.timer(0, period: period, scheduler: MainScheduler.instance).subscribe(onNext: { [unowned self] time in
             let val = (Double(time) * increment) / Double(self.viewModel.value.value)
-            self.metricValueLabel.text = val < self.viewModel.value.value ? String(val) : String(self.viewModel.value.value)
+            self.metricValueLabel.text = val < self.viewModel.value.value - 1.0 ? String(floor(val)) : String(floor(self.viewModel.value.value))
         }).disposed(by: disposeBag)
     }
 

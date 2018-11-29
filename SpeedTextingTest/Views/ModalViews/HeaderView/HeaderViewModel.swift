@@ -10,11 +10,11 @@ import Foundation
 
 final class HeaderViewModel {
 
-    var headerType: HeaderViewType
+    var headerType: ModalType
     var usernameText: String?
     var imageURLString: String?
 
-    init(username: String? = nil, url: String? = nil, type: HeaderViewType) {
+    init(username: String? = nil, url: String? = nil, type: ModalType) {
         usernameText = username
         imageURLString = url
         headerType = type

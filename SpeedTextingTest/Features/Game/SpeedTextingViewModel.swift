@@ -17,15 +17,14 @@ final class SpeedTextingViewModel {
     private var metricsModel = MetricsModel()
     private var disposeBag = DisposeBag()
 
-    var didFinishTest = false
     var userInput = PublishRelay<String>()
     var currentParagraphMutableText = PublishRelay<NSMutableAttributedString>()
 
+    var trial = BehaviorRelay(value: TrialModel())
     var timer = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
     var cpm = BehaviorRelay(value: 0.0)
     var wpm = BehaviorRelay(value: 0.0)
     var accuracy = BehaviorRelay(value: 0.0)
-
 
     init() {
         setupBindings()
@@ -65,7 +64,7 @@ final class SpeedTextingViewModel {
                 let paragraph = self.paragraphText
                 let attributedText = NSMutableAttributedString(string: self.paragraphText)
 
-                if input.count <= paragraph.count {
+                if input.count < paragraph.count {
                     for i in 0..<paragraph.count {
                         var correctColorIndicator: UIColor
                         let paragraphIndex = paragraph.index(paragraph.startIndex, offsetBy: i)
@@ -84,8 +83,7 @@ final class SpeedTextingViewModel {
                     attributedText.addAttribute(.font, value: font, range: NSRange(location: 0, length: paragraph.count-1))
 
                 } else {
-                    // TODO: Show modal of typing test results, update trial model with time, capture current time as well
-                    self.didFinishTest = true
+                    self.trial.accept(TrialModel(id: "", paragraph: paragraph, userID: UserDefaults.standard.object(forKey: Constants.cachedID) as? String, userInput: input, metrics: self.metricsModel))
                 }
 
                 return attributedText
@@ -101,7 +99,7 @@ final class SpeedTextingViewModel {
             .skip(1)
             .map({ [unowned self] input in
                 // TODO: - Look over this logic if you can improve the structure by binding
-                if input.count <= self.paragraphText.count {
+                if input.count < self.paragraphText.count {
                     self.numCharactersTyped += 1
                     self.metricsModel.calculateAccuracy(userInput: input, paragraph: self.paragraphText, numCharactersTyped: self.numCharactersTyped)
                 }
@@ -112,7 +110,7 @@ final class SpeedTextingViewModel {
 
         Observable.combineLatest(userInput.asObservable(), timer.asObservable())
             .map({ [unowned self] input, time in
-                if input.count <= self.paragraphText.count {
+                if input.count < self.paragraphText.count {
                     self.metricsModel.calculateCPM(userInput: input, time: time)
                 }
                 return self.metricsModel.cpm
@@ -122,7 +120,7 @@ final class SpeedTextingViewModel {
 
         Observable.combineLatest(userInput.asObservable(), timer.asObservable())
             .map({ [unowned self] input, time in
-                if input.count <= self.paragraphText.count {
+                if input.count < self.paragraphText.count {
                     self.metricsModel.calculateWPM(userInput: input, time: time)
                 }
                 return self.metricsModel.wpm

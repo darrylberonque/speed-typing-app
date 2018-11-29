@@ -8,11 +8,6 @@
 
 import UIKit
 
-enum HeaderViewType {
-    case user
-    case result
-}
-
 final class HeaderView: UIView {
     
     @IBOutlet private var headerView: UIView!
@@ -21,7 +16,7 @@ final class HeaderView: UIView {
     @IBOutlet private weak var usernameLabel: UILabel!
     @IBOutlet private weak var resultsLabel: UILabel!
 
-    var viewModel = HeaderViewModel(type: .user) {
+    var viewModel = HeaderViewModel(type: .display) {
         didSet {
             toggleUIStateTo(type: viewModel.headerType)
         }
@@ -48,9 +43,9 @@ final class HeaderView: UIView {
         userProfileImage.layer.cornerRadius = userProfileImage.frame.width/2
     }
 
-    private func toggleUIStateTo(type: HeaderViewType) {
+    private func toggleUIStateTo(type: ModalType) {
         switch type {
-        case .user:
+        case .display:
             populateUserInfo()
             resultsLabel.isHidden = true
         case .result:

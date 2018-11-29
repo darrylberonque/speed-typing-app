@@ -24,6 +24,7 @@ final class SpeedTextingViewController: UIViewController {
     private var viewModel = SpeedTextingViewModel()
     private var disposeBag = DisposeBag()
     private var timer = Timer()
+    private var user: UserModel?
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -35,9 +36,18 @@ final class SpeedTextingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getUser()
         setupMetricCounters()
         setupBindings()
         setupUI()
+    }
+
+    // TODO: - Generalized with inheritance using a top level VC
+    private func getUser() {
+        guard let userID = UserDefaults.standard.object(forKey: Constants.cachedID) as? String else { return }
+        RequestManager.getUser(userID: userID).subscribe(onNext: { userResult in
+            self.user = userResult.user
+        }).disposed(by: disposeBag)
     }
 
     private func setupMetricCounters() {
@@ -62,9 +72,6 @@ final class SpeedTextingViewController: UIViewController {
         viewModel.currentParagraphMutableText.asDriver(onErrorJustReturn: NSMutableAttributedString(string:"")).drive(onNext: { [unowned self] currentParagraph in
             self.paragraphTextView.attributedText = currentParagraph
             self.paragraphTextView.textAlignment = .center
-            if self.viewModel.didFinishTest {
-                // TODO: Add logic for showing modal here
-            }
         }).disposed(by: disposeBag)
 
         viewModel.timer.asObservable().subscribe(onNext: { [unowned self] time in
@@ -82,5 +89,20 @@ final class SpeedTextingViewController: UIViewController {
         viewModel.accuracy.asDriver().drive(onNext: { [unowned self] accuracy in
             self.accuracyMetricView.updateGameState(value: accuracy)
         }).disposed(by: disposeBag)
+
+        viewModel.trial.asObservable()
+            .skip(1)
+            .single()
+            .subscribe(onNext: { [unowned self] trial in
+                self.timeLabel.isHidden = true
+                guard let user = self.user else { return }
+                let modalVC = ModalViewController(viewModel: ModalViewModel(type: .result, trial: trial, user: user ))
+                self.userTextInput.resignFirstResponder()
+                self.view.addSubview(modalVC.view)
+
+                RequestManager.postTrial(trialResult: TrialEncodableResult(trial: trial))
+                    .subscribe()
+                    .disposed(by: self.disposeBag)
+            }).disposed(by: disposeBag)
     }
 }

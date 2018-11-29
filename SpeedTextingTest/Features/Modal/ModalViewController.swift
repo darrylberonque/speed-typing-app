@@ -18,9 +18,11 @@ class ModalViewController: UIViewController {
     @IBOutlet private weak var buttonView: ButtonView!
 
     private var disposeBag = DisposeBag()
+    private var viewModel: ModalViewModel?
 
-    init() {
+    init(viewModel: ModalViewModel) {
         super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -29,26 +31,29 @@ class ModalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        initViewModels()
+        initModalState()
+        setupButtonBindings()
     }
 
-//    private func initViewModels() {
-//        headerView.viewModel = HeaderViewModel(username: "Son Goku", url: "https://vignette.wikia.nocookie.net/dragonball/images/b/b9/Ultra_Instinct_Goku.png/revision/latest/scale-to-width-down/1000?cb=20180930060236", type: .result)
-//        let metrics = MetricsModel(time: 30, cpm: 250, wpm: 50, accuracy: 92)
-//        let trial = TrialModel(id: "1243", paragraph: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", userID: "321", userInput: "userinput", metrics: metrics)
-//        resultsView.viewModel = ResultsViewModel(trial: trial, displayType: .display)
-//
-//        buttonView.viewModel = ButtonViewModel(closable: false)
-//
-//        buttonView.viewModel.buttonViewState.asObservable().subscribe(onNext: { [unowned self] state in
-//            switch state {
-//            case .home:
-//                ViewControllerPresenter.presentViewController(presenter: self, type: .home)
-//            case .restart:
-//                ViewControllerPresenter.presentViewController(presenter: self, type: .countdown)
-//            case .closed:
-//                self.view.removeFromSuperview()
-//            }
-//        }).disposed(by: disposeBag)
-//    }
+    private func initModalState() {
+        modalView.addShadow(radius: 3.0, color: .black, opacity: 0.25)
+        
+        guard let viewModel = self.viewModel else { return }
+        headerView.viewModel = viewModel.configuredHeaderViewModel()
+        resultsView.viewModel = viewModel.configuredResultsViewModel()
+        buttonView.viewModel = viewModel.configuredButtonViewModel()
+    }
+
+    private func setupButtonBindings() {
+        buttonView.viewModel.buttonViewState.asObservable().subscribe(onNext: { [unowned self] state in
+            switch state {
+            case .home:
+                ViewControllerPresenter.presentViewController(presenter: self, type: .home)
+            case .restart:
+                ViewControllerPresenter.presentViewController(presenter: self, type: .countdown)
+            case .closed:
+                self.view.removeFromSuperview()
+            }
+        }).disposed(by: disposeBag)
+    }
 }

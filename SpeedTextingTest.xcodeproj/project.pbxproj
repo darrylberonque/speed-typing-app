@@ -31,7 +31,6 @@
 		2731E8C721AC56B2007C8668 /* AuthenticatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E8C621AC56B2007C8668 /* AuthenticatorFactory.swift */; };
 		2731E8CB21AC6F52007C8668 /* GoogleAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E8CA21AC6F52007C8668 /* GoogleAuthenticator.swift */; };
 		2731E8CD21AC8195007C8668 /* LoginViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E8CC21AC8195007C8668 /* LoginViewController+extensions.swift */; };
-		2731E8D021ACE607007C8668 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E8CF21ACE607007C8668 /* HomeViewModel.swift */; };
 		2731E8D221ACE615007C8668 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E8D121ACE615007C8668 /* HomeViewController.swift */; };
 		2731E8D421ACE621007C8668 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2731E8D321ACE621007C8668 /* HomeViewController.xib */; };
 		2731E8D621ACFACF007C8668 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E8D521ACFACF007C8668 /* UIView+extensions.swift */; };
@@ -65,6 +64,7 @@
 		279E838C21AF10910088D532 /* ButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279E838B21AF10910088D532 /* ButtonView.xib */; };
 		279E838E21AF109C0088D532 /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E838D21AF109C0088D532 /* ButtonViewModel.swift */; };
 		279E839021AF2D3A0088D532 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279E838F21AF2C1E0088D532 /* HeaderView.xib */; };
+		279E839221AF7C680088D532 /* ModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E839121AF7C680088D532 /* ModalViewModel.swift */; };
 		768C7C7E6A2861A1477EB753 /* Pods_SpeedTextingTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B931DB5E61F68B37088F7D55 /* Pods_SpeedTextingTestTests.framework */; };
 		E1CDED67C4FC25F7907DA967 /* Pods_SpeedTextingTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA195E4E02839643B9E9284 /* Pods_SpeedTextingTestUITests.framework */; };
 		E3D39BFD9909E09FCDCCEFCA /* Pods_SpeedTextingTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A61EDA57E5B3C5920525BBC /* Pods_SpeedTextingTest.framework */; };
@@ -114,7 +114,6 @@
 		2731E8C621AC56B2007C8668 /* AuthenticatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorFactory.swift; sourceTree = "<group>"; };
 		2731E8CA21AC6F52007C8668 /* GoogleAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthenticator.swift; sourceTree = "<group>"; };
 		2731E8CC21AC8195007C8668 /* LoginViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+extensions.swift"; sourceTree = "<group>"; };
-		2731E8CF21ACE607007C8668 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2731E8D121ACE615007C8668 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2731E8D321ACE621007C8668 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		2731E8D521ACFACF007C8668 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
@@ -155,6 +154,7 @@
 		279E838B21AF10910088D532 /* ButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonView.xib; sourceTree = "<group>"; };
 		279E838D21AF109C0088D532 /* ButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModel.swift; sourceTree = "<group>"; };
 		279E838F21AF2C1E0088D532 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HeaderView.xib; path = "/Users/darryl.beronque/Developer/speed-texting/SpeedTextingTest/SpeedTextingTest/Views/ModalViews/HeaderView/HeaderView.xib"; sourceTree = "<absolute>"; };
+		279E839121AF7C680088D532 /* ModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewModel.swift; sourceTree = "<group>"; };
 		3A61EDA57E5B3C5920525BBC /* Pods_SpeedTextingTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeedTextingTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D05984E064E1B59A02E4D8 /* Pods-SpeedTextingTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTextingTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTextingTestUITests/Pods-SpeedTextingTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ACAFCF25992D21D1CE5C55B3 /* Pods-SpeedTextingTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTextingTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTextingTestTests/Pods-SpeedTextingTestTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -262,7 +262,6 @@
 			children = (
 				2731E8D321ACE621007C8668 /* HomeViewController.xib */,
 				2731E8D121ACE615007C8668 /* HomeViewController.swift */,
-				2731E8CF21ACE607007C8668 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -311,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				27655D9321AE59F300374CB4 /* Features */,
+				2731E89521A7A89B007C8668 /* Networking */,
 				27655D9421AE5A0700374CB4 /* Views */,
 				2731E89621A7A8B2007C8668 /* Models */,
 				2731E89F21A86034007C8668 /* Extensions */,
@@ -378,7 +378,6 @@
 			isa = PBXGroup;
 			children = (
 				2731E8C021AC3761007C8668 /* Presenter */,
-				2731E89521A7A89B007C8668 /* Networking */,
 				2731E8B121AC26D8007C8668 /* Login */,
 				2731E8CE21ACE529007C8668 /* Home */,
 				275C66D021A5B1E500FA1439 /* Game */,
@@ -409,8 +408,9 @@
 		27655D9621AECA0100374CB4 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
-				2706F4BE21AEF8EF008F9750 /* ModalViewController.swift */,
 				2706F4BF21AEF8EF008F9750 /* ModalViewController.xib */,
+				2706F4BE21AEF8EF008F9750 /* ModalViewController.swift */,
+				279E839121AF7C680088D532 /* ModalViewModel.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -768,7 +768,6 @@
 				275C66D321A5B8A700FA1439 /* SpeedTextingViewController.swift in Sources */,
 				2731E88E21A71A16007C8668 /* MetricsModel.swift in Sources */,
 				2731E89421A73438007C8668 /* TrialModel.swift in Sources */,
-				2731E8D021ACE607007C8668 /* HomeViewModel.swift in Sources */,
 				2731E8B521AC2832007C8668 /* LoginViewController.swift in Sources */,
 				279E838E21AF109C0088D532 /* ButtonViewModel.swift in Sources */,
 				2731E89C21A7CF61007C8668 /* APIClient.swift in Sources */,
@@ -803,6 +802,7 @@
 				2731E8CB21AC6F52007C8668 /* GoogleAuthenticator.swift in Sources */,
 				2731E8DE21AD0868007C8668 /* LeaderboardViewController.swift in Sources */,
 				2731E8A621A8E3A6007C8668 /* Int+extensions.swift in Sources */,
+				279E839221AF7C680088D532 /* ModalViewModel.swift in Sources */,
 				2731E8D621ACFACF007C8668 /* UIView+extensions.swift in Sources */,
 				2731E8BF21AC3745007C8668 /* LoginViewModel.swift in Sources */,
 				2731E8A821A9FB53007C8668 /* ParagraphsModel.swift in Sources */,

@@ -70,7 +70,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.25490196079999999" green="0.38823529410000002" blue="0.54901960780000003" alpha="0.25" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.25490196079999999" green="0.38823529410000002" blue="0.54901960780000003" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="LCU-kK-k6f" firstAttribute="centerY" secondItem="NHL-WB-wSO" secondAttribute="centerY" id="BEz-zY-Ktm"/>
                         <constraint firstItem="LCU-kK-k6f" firstAttribute="centerX" secondItem="NHL-WB-wSO" secondAttribute="centerX" id="xHH-ms-Ikb"/>

@@ -59,9 +59,7 @@ final class HomeViewController: UIViewController {
         startTypingButton.rx.tap.asObservable()
             .single()
             .subscribe(onNext: { [unowned self] _ in
-//                let modal = ModalViewController()
-//                self.view.addSubview(modal.view)
-                 ViewControllerPresenter.presentViewController(presenter: self, type: .countdown)
+                ViewControllerPresenter.presentViewController(presenter: self, type: .countdown)
             })
             .disposed(by: disposeBag)
     }
