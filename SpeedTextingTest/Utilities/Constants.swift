@@ -53,4 +53,7 @@ class Constants {
     static let strokeEndKeypath = "strokeEnd"
     static let metricCircleAnimateKeypath = "animateMetricCircle"
 
+    // MARK: - TrialsViewController
+    static let sorts: [MetricType] = [.time, .accuracy, .wpm, .cpm]
+
 }

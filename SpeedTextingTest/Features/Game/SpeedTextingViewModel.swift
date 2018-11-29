@@ -112,6 +112,7 @@ final class SpeedTextingViewModel {
             .map({ [unowned self] input, time in
                 if input.count < self.paragraphText.count {
                     self.metricsModel.calculateCPM(userInput: input, time: time)
+                    self.metricsModel.time = time
                 }
                 return self.metricsModel.cpm
             })

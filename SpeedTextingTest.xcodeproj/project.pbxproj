@@ -36,8 +36,6 @@
 		2731E8D621ACFACF007C8668 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E8D521ACFACF007C8668 /* UIView+extensions.swift */; };
 		2731E8DA21AD0842007C8668 /* TrialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E8D921AD0842007C8668 /* TrialsViewController.swift */; };
 		2731E8DC21AD0855007C8668 /* TrialsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2731E8DB21AD0855007C8668 /* TrialsViewController.xib */; };
-		2731E8DE21AD0868007C8668 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E8DD21AD0868007C8668 /* LeaderboardViewController.swift */; };
-		2731E8E021AD0876007C8668 /* LeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2731E8DF21AD0876007C8668 /* LeaderboardViewController.xib */; };
 		2731E8E221AD7665007C8668 /* CountdownTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731E8E121AD7665007C8668 /* CountdownTimerViewController.swift */; };
 		2731E8E421AD7674007C8668 /* CountdownTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2731E8E321AD7674007C8668 /* CountdownTimerViewController.xib */; };
 		275C66A121A59E4F00FA1439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C66A021A59E4F00FA1439 /* AppDelegate.swift */; };
@@ -54,6 +52,20 @@
 		27655D8D21ADC53200374CB4 /* MetricCircleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27655D8C21ADC53200374CB4 /* MetricCircleViewModel.swift */; };
 		27655D8F21ADC54500374CB4 /* MetricViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27655D8E21ADC54500374CB4 /* MetricViewModel.swift */; };
 		27655D9221ADEAEA00374CB4 /* Double+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27655D9121ADEAEA00374CB4 /* Double+extensions.swift */; };
+		276679D621AFA4EC004866C1 /* MetricsRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276679D521AFA4EC004866C1 /* MetricsRowView.xib */; };
+		276679D921AFA78B004866C1 /* MetricsRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276679D821AFA78B004866C1 /* MetricsRowViewModel.swift */; };
+		276679DD21AFB017004866C1 /* MetricsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276679DC21AFB017004866C1 /* MetricsRowView.swift */; };
+		276679E221AFB345004866C1 /* UserTrialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276679E021AFB345004866C1 /* UserTrialTableViewCell.swift */; };
+		276679E321AFB345004866C1 /* UserTrialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276679E121AFB345004866C1 /* UserTrialTableViewCell.xib */; };
+		276679E621AFB35E004866C1 /* LeaderboardTrialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276679E421AFB35E004866C1 /* LeaderboardTrialTableViewCell.swift */; };
+		276679E721AFB35E004866C1 /* LeaderboardTrialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276679E521AFB35E004866C1 /* LeaderboardTrialTableViewCell.xib */; };
+		276679E921AFBD30004866C1 /* NavBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276679E821AFBD30004866C1 /* NavBarView.xib */; };
+		276679EB21AFBD4C004866C1 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276679EA21AFBD4C004866C1 /* NavBarView.swift */; };
+		276679EE21AFC291004866C1 /* TopMetricsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276679ED21AFC291004866C1 /* TopMetricsView.xib */; };
+		276679F021B01F0D004866C1 /* TopMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276679EF21B01F0D004866C1 /* TopMetricsView.swift */; };
+		276679F221B01F29004866C1 /* TopMetricsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276679F121B01F29004866C1 /* TopMetricsViewModel.swift */; };
+		276679F421B02183004866C1 /* TrialsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276679F321B02183004866C1 /* TrialsViewModel.swift */; };
+		276679F621B021B7004866C1 /* NavBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276679F521B021B7004866C1 /* NavBarViewModel.swift */; };
 		276D641721ADA90B00CD269A /* MetricCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276D641621ADA90B00CD269A /* MetricCircleView.swift */; };
 		27828D3221AED27B0094892E /* HeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27828D3121AED27B0094892E /* HeaderViewModel.swift */; };
 		27828D3621AED2B10094892E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27828D3521AED2B10094892E /* HeaderView.swift */; };
@@ -119,8 +131,6 @@
 		2731E8D521ACFACF007C8668 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		2731E8D921AD0842007C8668 /* TrialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialsViewController.swift; sourceTree = "<group>"; };
 		2731E8DB21AD0855007C8668 /* TrialsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrialsViewController.xib; sourceTree = "<group>"; };
-		2731E8DD21AD0868007C8668 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
-		2731E8DF21AD0876007C8668 /* LeaderboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardViewController.xib; sourceTree = "<group>"; };
 		2731E8E121AD7665007C8668 /* CountdownTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimerViewController.swift; sourceTree = "<group>"; };
 		2731E8E321AD7674007C8668 /* CountdownTimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountdownTimerViewController.xib; sourceTree = "<group>"; };
 		2740F4CC19B35A72A4F0A91E /* Pods-SpeedTextingTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTextingTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTextingTestUITests/Pods-SpeedTextingTestUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +154,20 @@
 		27655D8C21ADC53200374CB4 /* MetricCircleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCircleViewModel.swift; sourceTree = "<group>"; };
 		27655D8E21ADC54500374CB4 /* MetricViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricViewModel.swift; sourceTree = "<group>"; };
 		27655D9121ADEAEA00374CB4 /* Double+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+extensions.swift"; sourceTree = "<group>"; };
+		276679D521AFA4EC004866C1 /* MetricsRowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MetricsRowView.xib; sourceTree = "<group>"; };
+		276679D821AFA78B004866C1 /* MetricsRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsRowViewModel.swift; sourceTree = "<group>"; };
+		276679DC21AFB017004866C1 /* MetricsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MetricsRowView.swift; path = "/Users/darryl.beronque/Developer/speed-texting/SpeedTextingTest/SpeedTextingTest/Views/TableViewCells/MetricsRowView/MetricsRowView.swift"; sourceTree = "<absolute>"; };
+		276679E021AFB345004866C1 /* UserTrialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTrialTableViewCell.swift; sourceTree = "<group>"; };
+		276679E121AFB345004866C1 /* UserTrialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTrialTableViewCell.xib; sourceTree = "<group>"; };
+		276679E421AFB35E004866C1 /* LeaderboardTrialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTrialTableViewCell.swift; sourceTree = "<group>"; };
+		276679E521AFB35E004866C1 /* LeaderboardTrialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardTrialTableViewCell.xib; sourceTree = "<group>"; };
+		276679E821AFBD30004866C1 /* NavBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavBarView.xib; sourceTree = "<group>"; };
+		276679EA21AFBD4C004866C1 /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
+		276679ED21AFC291004866C1 /* TopMetricsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopMetricsView.xib; sourceTree = "<group>"; };
+		276679EF21B01F0D004866C1 /* TopMetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMetricsView.swift; sourceTree = "<group>"; };
+		276679F121B01F29004866C1 /* TopMetricsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMetricsViewModel.swift; sourceTree = "<group>"; };
+		276679F321B02183004866C1 /* TrialsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialsViewModel.swift; sourceTree = "<group>"; };
+		276679F521B021B7004866C1 /* NavBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarViewModel.swift; sourceTree = "<group>"; };
 		276D641621ADA90B00CD269A /* MetricCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCircleView.swift; sourceTree = "<group>"; };
 		27828D3121AED27B0094892E /* HeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModel.swift; sourceTree = "<group>"; };
 		27828D3521AED2B10094892E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -260,25 +284,17 @@
 		2731E8CE21ACE529007C8668 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				2731E8D321ACE621007C8668 /* HomeViewController.xib */,
 				2731E8D121ACE615007C8668 /* HomeViewController.swift */,
+				2731E8D321ACE621007C8668 /* HomeViewController.xib */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		2731E8D721AD07FB007C8668 /* Leaderboard */ = {
-			isa = PBXGroup;
-			children = (
-				2731E8DD21AD0868007C8668 /* LeaderboardViewController.swift */,
-				2731E8DF21AD0876007C8668 /* LeaderboardViewController.xib */,
-			);
-			path = Leaderboard;
 			sourceTree = "<group>";
 		};
 		2731E8D821AD081D007C8668 /* Trials */ = {
 			isa = PBXGroup;
 			children = (
 				2731E8D921AD0842007C8668 /* TrialsViewController.swift */,
+				276679F321B02183004866C1 /* TrialsViewModel.swift */,
 				2731E8DB21AD0855007C8668 /* TrialsViewController.xib */,
 			);
 			path = Trials;
@@ -382,7 +398,6 @@
 				2731E8CE21ACE529007C8668 /* Home */,
 				275C66D021A5B1E500FA1439 /* Game */,
 				2731E8D821AD081D007C8668 /* Trials */,
-				2731E8D721AD07FB007C8668 /* Leaderboard */,
 				27655D9621AECA0100374CB4 /* Modal */,
 			);
 			path = Features;
@@ -391,6 +406,8 @@
 		27655D9421AE5A0700374CB4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				276679EC21AFC04D004866C1 /* TopMetricsView */,
+				276679D021AFA3FE004866C1 /* TableViewCells */,
 				27655D9721AECA3100374CB4 /* ModalViews */,
 				27655D9521AE5A8400374CB4 /* NavBarView */,
 				27655D9021ADC54E00374CB4 /* MetricView */,
@@ -401,6 +418,9 @@
 		27655D9521AE5A8400374CB4 /* NavBarView */ = {
 			isa = PBXGroup;
 			children = (
+				276679E821AFBD30004866C1 /* NavBarView.xib */,
+				276679EA21AFBD4C004866C1 /* NavBarView.swift */,
+				276679F521B021B7004866C1 /* NavBarViewModel.swift */,
 			);
 			path = NavBarView;
 			sourceTree = "<group>";
@@ -423,6 +443,38 @@
 				27828D3021AED23C0094892E /* ButtonView */,
 			);
 			path = ModalViews;
+			sourceTree = "<group>";
+		};
+		276679D021AFA3FE004866C1 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				276679D721AFA766004866C1 /* MetricsRowView */,
+				276679E121AFB345004866C1 /* UserTrialTableViewCell.xib */,
+				276679E021AFB345004866C1 /* UserTrialTableViewCell.swift */,
+				276679E521AFB35E004866C1 /* LeaderboardTrialTableViewCell.xib */,
+				276679E421AFB35E004866C1 /* LeaderboardTrialTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		276679D721AFA766004866C1 /* MetricsRowView */ = {
+			isa = PBXGroup;
+			children = (
+				276679D521AFA4EC004866C1 /* MetricsRowView.xib */,
+				276679DC21AFB017004866C1 /* MetricsRowView.swift */,
+				276679D821AFA78B004866C1 /* MetricsRowViewModel.swift */,
+			);
+			path = MetricsRowView;
+			sourceTree = "<group>";
+		};
+		276679EC21AFC04D004866C1 /* TopMetricsView */ = {
+			isa = PBXGroup;
+			children = (
+				276679ED21AFC291004866C1 /* TopMetricsView.xib */,
+				276679EF21B01F0D004866C1 /* TopMetricsView.swift */,
+				276679F121B01F29004866C1 /* TopMetricsViewModel.swift */,
+			);
+			path = TopMetricsView;
 			sourceTree = "<group>";
 		};
 		27828D2E21AED1FB0094892E /* ResultsView */ = {
@@ -589,18 +641,22 @@
 			files = (
 				279E839021AF2D3A0088D532 /* HeaderView.xib in Resources */,
 				2731E8B921AC2CF7007C8668 /* LoginViewController.xib in Resources */,
+				276679E721AFB35E004866C1 /* LeaderboardTrialTableViewCell.xib in Resources */,
 				2731E8DC21AD0855007C8668 /* TrialsViewController.xib in Resources */,
 				279E838621AF08FD0088D532 /* ResultsView.xib in Resources */,
 				2706F4C121AEF8EF008F9750 /* ModalViewController.xib in Resources */,
-				2731E8E021AD0876007C8668 /* LeaderboardViewController.xib in Resources */,
 				275C66AB21A59E5000FA1439 /* LaunchScreen.storyboard in Resources */,
 				275C66A821A59E5000FA1439 /* Assets.xcassets in Resources */,
 				279E838C21AF10910088D532 /* ButtonView.xib in Resources */,
+				276679E321AFB345004866C1 /* UserTrialTableViewCell.xib in Resources */,
+				276679E921AFBD30004866C1 /* NavBarView.xib in Resources */,
 				275C66CF21A5A14300FA1439 /* SpeedTextingViewController.xib in Resources */,
 				27655D8B21ADC12C00374CB4 /* MetricView.xib in Resources */,
 				2731E8E421AD7674007C8668 /* CountdownTimerViewController.xib in Resources */,
+				276679D621AFA4EC004866C1 /* MetricsRowView.xib in Resources */,
 				275C66A621A59E4F00FA1439 /* Main.storyboard in Resources */,
 				2731E8D421ACE621007C8668 /* HomeViewController.xib in Resources */,
+				276679EE21AFC291004866C1 /* TopMetricsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,40 +823,48 @@
 				27828D3221AED27B0094892E /* HeaderViewModel.swift in Sources */,
 				275C66D321A5B8A700FA1439 /* SpeedTextingViewController.swift in Sources */,
 				2731E88E21A71A16007C8668 /* MetricsModel.swift in Sources */,
+				276679DD21AFB017004866C1 /* MetricsRowView.swift in Sources */,
 				2731E89421A73438007C8668 /* TrialModel.swift in Sources */,
 				2731E8B521AC2832007C8668 /* LoginViewController.swift in Sources */,
 				279E838E21AF109C0088D532 /* ButtonViewModel.swift in Sources */,
 				2731E89C21A7CF61007C8668 /* APIClient.swift in Sources */,
+				276679F621B021B7004866C1 /* NavBarViewModel.swift in Sources */,
 				2731E8CD21AC8195007C8668 /* LoginViewController+extensions.swift in Sources */,
 				279E838A21AF10830088D532 /* ButtonView.swift in Sources */,
 				275C66A121A59E4F00FA1439 /* AppDelegate.swift in Sources */,
 				27655D8D21ADC53200374CB4 /* MetricCircleViewModel.swift in Sources */,
 				2706F4C021AEF8EF008F9750 /* ModalViewController.swift in Sources */,
+				276679E221AFB345004866C1 /* UserTrialTableViewCell.swift in Sources */,
 				2731E8BB21AC3111007C8668 /* UIColor+extensions.swift in Sources */,
 				2731E8C321AC54E5007C8668 /* FacebookAuthenticator.swift in Sources */,
 				27655D8921ADC0D300374CB4 /* MetricView.swift in Sources */,
 				2731E8C721AC56B2007C8668 /* AuthenticatorFactory.swift in Sources */,
+				276679F421B02183004866C1 /* TrialsViewModel.swift in Sources */,
 				27655D9221ADEAEA00374CB4 /* Double+extensions.swift in Sources */,
 				2731E8D221ACE615007C8668 /* HomeViewController.swift in Sources */,
 				2731E8B021AA2AB6007C8668 /* UserModel.swift in Sources */,
 				2731E89821A7C56E007C8668 /* URLRequestBuilder.swift in Sources */,
 				2731E8B321AC27B8007C8668 /* ViewControllerPresenter.swift in Sources */,
+				276679D921AFA78B004866C1 /* MetricsRowViewModel.swift in Sources */,
 				2731E8E221AD7665007C8668 /* CountdownTimerViewController.swift in Sources */,
 				2731E8C521AC5593007C8668 /* FBSignIn.swift in Sources */,
+				276679F221B01F29004866C1 /* TopMetricsViewModel.swift in Sources */,
 				2731E89E21A85030007C8668 /* RequestManager.swift in Sources */,
 				2731E89A21A7CD3C007C8668 /* URLRequest+extensions.swift in Sources */,
 				275C66D521A5B95E00FA1439 /* SpeedTextingViewModel.swift in Sources */,
 				27828D3621AED2B10094892E /* HeaderView.swift in Sources */,
+				276679EB21AFBD4C004866C1 /* NavBarView.swift in Sources */,
 				2731E8DA21AD0842007C8668 /* TrialsViewController.swift in Sources */,
+				276679E621AFB35E004866C1 /* LeaderboardTrialTableViewCell.swift in Sources */,
 				2731E89021A71CE5007C8668 /* Constants.swift in Sources */,
 				279E838421AF08ED0088D532 /* ResultsView.swift in Sources */,
 				27655D8F21ADC54500374CB4 /* MetricViewModel.swift in Sources */,
 				276D641721ADA90B00CD269A /* MetricCircleView.swift in Sources */,
+				276679F021B01F0D004866C1 /* TopMetricsView.swift in Sources */,
 				279E838821AF09080088D532 /* ResultsViewModel.swift in Sources */,
 				2731E8B721AC2B91007C8668 /* ViewControllerFactory.swift in Sources */,
 				2731E8BD21AC3206007C8668 /* UIButton+extensions.swift in Sources */,
 				2731E8CB21AC6F52007C8668 /* GoogleAuthenticator.swift in Sources */,
-				2731E8DE21AD0868007C8668 /* LeaderboardViewController.swift in Sources */,
 				2731E8A621A8E3A6007C8668 /* Int+extensions.swift in Sources */,
 				279E839221AF7C680088D532 /* ModalViewModel.swift in Sources */,
 				2731E8D621ACFACF007C8668 /* UIView+extensions.swift in Sources */,

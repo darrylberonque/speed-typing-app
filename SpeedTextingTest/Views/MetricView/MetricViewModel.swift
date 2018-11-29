@@ -14,6 +14,7 @@ enum MetricType: String {
     case wpm = "WPM"
     case cpm = "CPM"
     case accuracy = "Accuracy (%)"
+    case time = "Time (s)"
 
     var maxValue: Int {
         switch self {
@@ -23,6 +24,8 @@ enum MetricType: String {
             return Constants.cpmMax
         case .accuracy:
             return Constants.accuracyMax
+        default:
+            return 0
         }
     }
 }

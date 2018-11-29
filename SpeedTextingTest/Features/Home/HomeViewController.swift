@@ -47,7 +47,7 @@ final class HomeViewController: UIViewController {
         leaderboardButton.rx.tap.asObservable()
             .single()
             .subscribe(onNext: { [unowned self] _ in
-                ViewControllerPresenter.presentViewController(presenter: self, type: .leaderboard)
+                ViewControllerPresenter.presentViewController(presenter: self, type: .trials)
             })
             .disposed(by: disposeBag)
         trialsButton.rx.tap.asObservable()

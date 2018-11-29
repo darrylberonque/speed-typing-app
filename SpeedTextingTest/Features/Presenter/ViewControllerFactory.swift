@@ -26,8 +26,6 @@ struct ViewControllerFactory {
             return SpeedTextingViewController()
         case .trials:
             return TrialsViewController()
-        case .leaderboard:
-            return LeaderboardViewController()
         }
 
     }

@@ -55,7 +55,7 @@ final class LoginViewController: UIViewController {
         RequestManager.postUser(userResult: UserEncodableResult(user: user))
             .subscribe(onNext: { userResult in
                 guard let id = userResult.user?.id else { return }
-                UserDefaults.standard.set(id, forKey: "userID")
+                UserDefaults.standard.set(id, forKey: Constants.cachedID)
                 DispatchQueue.main.async {
                     ViewControllerPresenter.presentViewController(presenter: self, type: .home)
                 }

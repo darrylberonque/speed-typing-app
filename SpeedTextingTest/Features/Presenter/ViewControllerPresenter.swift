@@ -15,7 +15,6 @@ enum ViewControllerType {
     case countdown
     case game
     case trials
-    case leaderboard
 }
 
 final class ViewControllerPresenter {

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavBarView" customModule="SpeedTextingTest" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="gy2-wP-N0F" id="M6w-se-Y8I"/>
+                <outlet property="navBarTitleLabel" destination="rjQ-NW-dMG" id="vZn-Gi-P6x"/>
+                <outlet property="navBarView" destination="iN0-l3-epB" id="Y4x-KX-l6Y"/>
+                <outlet property="sortSegmentedControl" destination="Ji5-6z-Mue" id="OaN-oS-PaG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="NavBarView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjQ-NW-dMG" userLabel="NavBarTitleLabel">
+                    <rect key="frame" x="187.5" y="30" width="0.0" height="27.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="27.5" id="rIw-tf-pq5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ji5-6z-Mue" userLabel="SortControl">
+                    <rect key="frame" x="44" y="97.5" width="287" height="29"/>
+                    <segments>
+                        <segment title="Time"/>
+                        <segment title="Accuracy"/>
+                        <segment title="WPM"/>
+                        <segment title="CPM"/>
+                    </segments>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gy2-wP-N0F" userLabel="BackButton">
+                    <rect key="frame" x="16" y="28" width="32" height="32"/>
+                    <state key="normal" image="left-arrow">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.25490196079999999" green="0.38823529410000002" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Ji5-6z-Mue" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2n3-xb-9ne"/>
+                <constraint firstItem="gy2-wP-N0F" firstAttribute="centerY" secondItem="rjQ-NW-dMG" secondAttribute="centerY" id="3k0-bS-fRh"/>
+                <constraint firstItem="Ji5-6z-Mue" firstAttribute="top" secondItem="rjQ-NW-dMG" secondAttribute="bottom" constant="40" id="58T-wC-GiX"/>
+                <constraint firstItem="rjQ-NW-dMG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="5Wq-pM-RuE"/>
+                <constraint firstItem="rjQ-NW-dMG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="89k-J2-eW6"/>
+                <constraint firstItem="gy2-wP-N0F" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="buz-xn-4Kj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="left-arrow" width="32" height="32"/>
+    </resources>
+</document>

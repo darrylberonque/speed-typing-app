@@ -1,0 +1,55 @@
+//
+//  NavBarView.swift
+//  SpeedTextingTest
+//
+//  Created by darryl.beronque on 11/29/18.
+//  Copyright © 2018 darrylberonque. All rights reserved.
+//
+
+import UIKit
+import RxSwift
+import RxCocoa
+
+final class NavBarView: UIView {
+    
+    @IBOutlet private var navBarView: UIView!
+    @IBOutlet private weak var backButton: UIButton!
+    @IBOutlet private weak var navBarTitleLabel: UILabel!
+    @IBOutlet private weak var sortSegmentedControl: UISegmentedControl!
+
+    private var disposeBag = DisposeBag()
+
+    var viewModel = NavBarViewModel(title: "Your Trials") {
+        didSet {
+            navBarTitleLabel.text = viewModel.title
+            setupBindings()
+        }
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initNavBarView()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initNavBarView()
+    }
+
+    private func initNavBarView() {
+        Bundle.main.loadNibNamed("NavBarView", owner: self, options: nil)
+        addSubview(navBarView)
+        navBarView.frame = self.bounds
+        navBarView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    }
+
+    private func setupBindings() {
+        sortSegmentedControl.rx.value.asObservable()
+            .map { index in
+                return Constants.sorts[index]
+            }
+            .bind(to: viewModel.selectedSort)
+            .disposed(by: disposeBag)
+    }
+
+}
