@@ -24,8 +24,10 @@ struct ViewControllerFactory {
             return CountdownTimerViewController()
         case .game:
             return SpeedTextingViewController()
-        case .trials:
-            return TrialsViewController()
+        case .userTrials:
+            return TrialsViewController(type: .userTrials)
+        case .leaderboard:
+            return TrialsViewController(type: .leaderboard)
         }
 
     }

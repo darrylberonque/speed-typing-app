@@ -20,26 +20,26 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="MetricsRowView">
-            <rect key="frame" x="0.0" y="0.0" width="245" height="110"/>
+            <rect key="frame" x="0.0" y="0.0" width="285" height="110"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28M-dE-VEy" userLabel="MetricsRowViewContainer">
-                    <rect key="frame" x="0.0" y="0.0" width="245" height="110"/>
+                    <rect key="frame" x="0.0" y="0.0" width="285" height="110"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFh-qi-rm5" userLabel="WPM" customClass="MetricView" customModule="SpeedTextingTest" customModuleProvider="target">
-                            <rect key="frame" x="85" y="5" width="75" height="100"/>
+                            <rect key="frame" x="105" y="5" width="75" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="Oax-kw-0x0"/>
+                                <constraint firstAttribute="height" priority="750" constant="100" id="Oax-kw-0x0"/>
                                 <constraint firstAttribute="width" constant="75" id="YPX-qP-V8x"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Czt-As-IbO" userLabel="CPM" customClass="MetricView" customModule="SpeedTextingTest" customModuleProvider="target">
-                            <rect key="frame" x="165" y="5" width="75" height="100"/>
+                            <rect key="frame" x="205" y="5" width="75" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="75" id="9ei-84-sXv"/>
-                                <constraint firstAttribute="height" constant="100" id="skQ-lK-9pG"/>
+                                <constraint firstAttribute="height" priority="750" constant="100" id="skQ-lK-9pG"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMc-RH-OWI" userLabel="Accuracy" customClass="MetricView" customModule="SpeedTextingTest" customModuleProvider="target">
@@ -47,7 +47,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="75" id="ax5-Mc-qxd"/>
-                                <constraint firstAttribute="height" constant="100" id="dje-lE-9Se"/>
+                                <constraint firstAttribute="height" priority="750" constant="100" id="dje-lE-9Se"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -59,9 +59,9 @@
                         <constraint firstItem="JMc-RH-OWI" firstAttribute="leading" secondItem="28M-dE-VEy" secondAttribute="leading" constant="5" id="PxI-ye-W9D"/>
                         <constraint firstItem="OFh-qi-rm5" firstAttribute="top" secondItem="28M-dE-VEy" secondAttribute="top" constant="5" id="QA2-uN-9be"/>
                         <constraint firstAttribute="bottom" secondItem="JMc-RH-OWI" secondAttribute="bottom" constant="5" id="S2n-hD-RjQ"/>
-                        <constraint firstItem="Czt-As-IbO" firstAttribute="leading" secondItem="OFh-qi-rm5" secondAttribute="trailing" constant="5" id="ZoZ-fG-ZDL"/>
                         <constraint firstAttribute="bottom" secondItem="Czt-As-IbO" secondAttribute="bottom" constant="5" id="pcP-rl-d8w"/>
                         <constraint firstItem="JMc-RH-OWI" firstAttribute="top" secondItem="28M-dE-VEy" secondAttribute="top" constant="5" id="w55-o7-iiT"/>
+                        <constraint firstItem="OFh-qi-rm5" firstAttribute="centerX" secondItem="28M-dE-VEy" secondAttribute="centerX" id="zjr-iS-IfQ"/>
                     </constraints>
                 </view>
             </subviews>

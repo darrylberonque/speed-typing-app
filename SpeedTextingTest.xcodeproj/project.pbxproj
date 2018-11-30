@@ -69,6 +69,7 @@
 		276D641721ADA90B00CD269A /* MetricCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276D641621ADA90B00CD269A /* MetricCircleView.swift */; };
 		27828D3221AED27B0094892E /* HeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27828D3121AED27B0094892E /* HeaderViewModel.swift */; };
 		27828D3621AED2B10094892E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27828D3521AED2B10094892E /* HeaderView.swift */; };
+		27960EC321B046FC00CC91DF /* TrialCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27960EC221B046FC00CC91DF /* TrialCellViewModel.swift */; };
 		279E838421AF08ED0088D532 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E838321AF08ED0088D532 /* ResultsView.swift */; };
 		279E838621AF08FD0088D532 /* ResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279E838521AF08FD0088D532 /* ResultsView.xib */; };
 		279E838821AF09080088D532 /* ResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E838721AF09080088D532 /* ResultsViewModel.swift */; };
@@ -171,6 +172,7 @@
 		276D641621ADA90B00CD269A /* MetricCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCircleView.swift; sourceTree = "<group>"; };
 		27828D3121AED27B0094892E /* HeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModel.swift; sourceTree = "<group>"; };
 		27828D3521AED2B10094892E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		27960EC221B046FC00CC91DF /* TrialCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialCellViewModel.swift; sourceTree = "<group>"; };
 		279E838321AF08ED0088D532 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		279E838521AF08FD0088D532 /* ResultsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsView.xib; sourceTree = "<group>"; };
 		279E838721AF09080088D532 /* ResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModel.swift; sourceTree = "<group>"; };
@@ -293,9 +295,9 @@
 		2731E8D821AD081D007C8668 /* Trials */ = {
 			isa = PBXGroup;
 			children = (
+				2731E8DB21AD0855007C8668 /* TrialsViewController.xib */,
 				2731E8D921AD0842007C8668 /* TrialsViewController.swift */,
 				276679F321B02183004866C1 /* TrialsViewModel.swift */,
-				2731E8DB21AD0855007C8668 /* TrialsViewController.xib */,
 			);
 			path = Trials;
 			sourceTree = "<group>";
@@ -453,6 +455,7 @@
 				276679E021AFB345004866C1 /* UserTrialTableViewCell.swift */,
 				276679E521AFB35E004866C1 /* LeaderboardTrialTableViewCell.xib */,
 				276679E421AFB35E004866C1 /* LeaderboardTrialTableViewCell.swift */,
+				27960EC221B046FC00CC91DF /* TrialCellViewModel.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -737,12 +740,12 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -756,12 +759,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -866,6 +869,7 @@
 				2731E8BD21AC3206007C8668 /* UIButton+extensions.swift in Sources */,
 				2731E8CB21AC6F52007C8668 /* GoogleAuthenticator.swift in Sources */,
 				2731E8A621A8E3A6007C8668 /* Int+extensions.swift in Sources */,
+				27960EC321B046FC00CC91DF /* TrialCellViewModel.swift in Sources */,
 				279E839221AF7C680088D532 /* ModalViewModel.swift in Sources */,
 				2731E8D621ACFACF007C8668 /* UIView+extensions.swift in Sources */,
 				2731E8BF21AC3745007C8668 /* LoginViewModel.swift in Sources */,

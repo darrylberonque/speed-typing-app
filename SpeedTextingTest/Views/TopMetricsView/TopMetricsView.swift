@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxGesture
 
 final class TopMetricsView: UIView {
 
@@ -14,9 +17,12 @@ final class TopMetricsView: UIView {
     @IBOutlet private weak var draggableView: UIView!
     @IBOutlet private weak var metricsRowView: MetricsRowView!
 
+    private var disposeBag = DisposeBag()
+
     var viewModel: TopMetricsViewModel? {
         didSet {
             populateMetricsRowView()
+            setupBindings()
         }
     }
 
@@ -35,10 +41,25 @@ final class TopMetricsView: UIView {
         addSubview(topMetricsView)
         topMetricsView.frame = self.bounds
         topMetricsView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        topMetricsView.addShadow(radius: 3.0, color: .black, opacity: 0.25)
     }
 
     private func populateMetricsRowView() {
         guard let viewModel = viewModel else { return }
         metricsRowView.viewModel = viewModel.metricsRowViewModel
+    }
+
+    private func setupBindings() {
+        // TODO: - Get view to follow gesture back down
+        draggableView.rx
+            .panGesture()
+            .when(.began, .changed)
+            .asTranslation()
+            .subscribe(onNext: { translation, _ in
+                if abs(translation.y) < CGFloat(Constants.topMetricsDraggableDistance) {
+                    self.topMetricsView.transform = CGAffineTransform(translationX: 0, y: translation.y)
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }

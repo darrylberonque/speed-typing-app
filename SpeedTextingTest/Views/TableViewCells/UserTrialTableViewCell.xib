@@ -22,19 +22,30 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfO-kp-EQ9" userLabel="Container">
                         <rect key="frame" x="2.5" y="2.5" width="315" height="99.5"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PeS-w6-l87" userLabel="MetricsRowView" customClass="MetricsRowView" customModule="SpeedTextingTest" customModuleProvider="target">
-                                <rect key="frame" x="35" y="0.0" width="245" height="99.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FWD-te-rtI" userLabel="SubContainer">
+                                <rect key="frame" x="15" y="0.0" width="285" height="99.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PeS-w6-l87" userLabel="MetricsRowView" customClass="MetricsRowView" customModule="SpeedTextingTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="99.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="285" id="rH9-rQ-GjC"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="245" id="rH9-rQ-GjC"/>
+                                    <constraint firstAttribute="width" constant="285" id="2X1-nC-kK0"/>
+                                    <constraint firstItem="PeS-w6-l87" firstAttribute="top" secondItem="FWD-te-rtI" secondAttribute="top" id="DAg-XL-BG3"/>
+                                    <constraint firstAttribute="trailing" secondItem="PeS-w6-l87" secondAttribute="trailing" id="Ga4-uy-gN3"/>
+                                    <constraint firstAttribute="bottom" secondItem="PeS-w6-l87" secondAttribute="bottom" id="om3-0J-YNh"/>
+                                    <constraint firstItem="PeS-w6-l87" firstAttribute="leading" secondItem="FWD-te-rtI" secondAttribute="leading" id="rbT-je-iku"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="PeS-w6-l87" secondAttribute="bottom" id="Je9-VU-Cab"/>
-                            <constraint firstItem="PeS-w6-l87" firstAttribute="top" secondItem="lfO-kp-EQ9" secondAttribute="top" id="egs-Ug-xy1"/>
-                            <constraint firstItem="PeS-w6-l87" firstAttribute="centerX" secondItem="lfO-kp-EQ9" secondAttribute="centerX" id="oQn-aT-ohD"/>
+                            <constraint firstAttribute="bottom" secondItem="FWD-te-rtI" secondAttribute="bottom" id="4yA-gg-qxr"/>
+                            <constraint firstItem="FWD-te-rtI" firstAttribute="top" secondItem="lfO-kp-EQ9" secondAttribute="top" id="BFU-Rs-kOn"/>
+                            <constraint firstItem="FWD-te-rtI" firstAttribute="centerX" secondItem="lfO-kp-EQ9" secondAttribute="centerX" id="rUG-eJ-z02"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -48,6 +59,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="metricsRowView" destination="PeS-w6-l87" id="Emp-jS-g8c"/>
+                <outlet property="subContainer" destination="FWD-te-rtI" id="LIi-Xs-8do"/>
             </connections>
         </tableViewCell>
     </objects>

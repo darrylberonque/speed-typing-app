@@ -47,13 +47,13 @@ final class HomeViewController: UIViewController {
         leaderboardButton.rx.tap.asObservable()
             .single()
             .subscribe(onNext: { [unowned self] _ in
-                ViewControllerPresenter.presentViewController(presenter: self, type: .trials)
+                ViewControllerPresenter.presentViewController(presenter: self, type: .leaderboard)
             })
             .disposed(by: disposeBag)
         trialsButton.rx.tap.asObservable()
             .single()
             .subscribe(onNext: { [unowned self] _ in
-                ViewControllerPresenter.presentViewController(presenter: self, type: .trials)
+                ViewControllerPresenter.presentViewController(presenter: self, type: .userTrials)
             })
             .disposed(by: disposeBag)
         startTypingButton.rx.tap.asObservable()

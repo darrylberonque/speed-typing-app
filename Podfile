@@ -13,6 +13,8 @@ target 'SpeedTextingTest' do
   pod 'FacebookLogin'
   pod 'FacebookShare'
   pod 'GoogleSignIn'
+  pod "RxGesture"
+
 
   target 'SpeedTextingTestTests' do
     inherit! :search_paths

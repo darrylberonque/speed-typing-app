@@ -10,15 +10,13 @@ import Foundation
 
 final class MetricsRowViewModel {
 
-    var metrics: MetricsModel?
+    var metrics: MetricsModel
 
     init(metrics: MetricsModel) {
         self.metrics = metrics
     }
 
     func configuredMetricViewModel(type: MetricType) -> MetricViewModel {
-        guard let metrics = metrics else { return MetricViewModel(type: .accuracy, value: 0.0, displayType: .display) }
-
         switch type {
         case .accuracy:
             return MetricViewModel(type: .accuracy, value: metrics.accuracy, displayType: .display)

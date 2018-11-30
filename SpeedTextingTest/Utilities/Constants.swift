@@ -18,6 +18,7 @@ class Constants {
     static let metricCircleStartAngle = (3/2) * CGFloat.pi
     static let metricCircleEndAngle = metricCircleStartAngle + (2 * CGFloat.pi)
     static let backButtonBorderWidth = 2.0
+    static let topMetricsDraggableDistance = 150
 
 
     // MARK: - Login Constants
@@ -55,5 +56,8 @@ class Constants {
 
     // MARK: - TrialsViewController
     static let sorts: [MetricType] = [.time, .accuracy, .wpm, .cpm]
-
+    static let userTrialsTitle = "Your Trials:"
+    static let leaderboardTitle = "Leaderboard"
+    static let userTrialCellNibName = "UserTrialTableViewCell"
+    static let leaderboardTrialCellNibName = "LeaderboardTrialTableViewCell"
 }
