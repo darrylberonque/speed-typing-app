@@ -44,6 +44,13 @@ final class NavBarView: UIView {
     }
 
     private func setupBindings() {
+        backButton.rx.tap.asObservable()
+            .subscribe(onNext: { [weak self] _ in
+                guard let welf = self else { return }
+                welf.viewModel.buttonTapped.accept(true)
+            })
+            .disposed(by: disposeBag)
+
         sortSegmentedControl.rx.value.asObservable()
             .map { index in
                 return Constants.sorts[index]

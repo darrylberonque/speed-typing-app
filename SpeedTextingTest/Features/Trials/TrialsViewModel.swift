@@ -19,6 +19,7 @@ final class TrialsViewModel {
     
     var initialize = BehaviorRelay(value: false)
     var sort = BehaviorRelay(value: MetricType.time)
+    var dismiss = BehaviorRelay(value: false)
 
     private var fetchUsers = BehaviorRelay(value: false)
     private var disposeBag = DisposeBag()
@@ -48,6 +49,9 @@ final class TrialsViewModel {
         navBarViewModel.selectedSort.asObservable()
             .bind(to: sort)
             .disposed(by: disposeBag)
+        navBarViewModel.buttonTapped.asObservable()
+            .bind(to: dismiss)
+            .disposed(by: disposeBag)
     }
 
     // MARK: - UITableViewDataSource
@@ -55,7 +59,7 @@ final class TrialsViewModel {
         guard let navBarViewModel = navBarViewModel else { return [] }
         switch navBarViewModel.selectedSort.value {
         case .time:
-            return trialCellViewModels
+            return trialCellViewModels.reversed()
         case .accuracy:
             return trialCellViewModels.sorted(by: { first, second in
                 return first.metricsRowViewModel.metrics.accuracy > second.metricsRowViewModel.metrics.accuracy

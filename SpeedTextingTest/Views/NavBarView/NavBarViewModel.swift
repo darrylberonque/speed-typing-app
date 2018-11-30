@@ -13,6 +13,7 @@ import RxCocoa
 final class NavBarViewModel {
 
     var title: String?
+    var buttonTapped = BehaviorRelay(value: false)
     var selectedSort = BehaviorRelay(value: MetricType.time)
 
     init(title: String) {

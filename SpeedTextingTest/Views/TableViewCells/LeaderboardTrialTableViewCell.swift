@@ -10,8 +10,9 @@ import UIKit
 
 final class LeaderboardTrialTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var metricsRowView: MetricsRowView!
-    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet private weak var subContainer: UIView!
+    @IBOutlet private weak var metricsRowView: MetricsRowView!
+    @IBOutlet private weak var userImage: UIImageView!
 
     var viewModel: TrialCellViewModel? {
         didSet {
@@ -23,7 +24,7 @@ final class LeaderboardTrialTableViewCell: UITableViewCell {
         guard let viewModel = self.viewModel, let imageURL = viewModel.user.imageURL else { return }
 
         var imageData: Data
-        if userImage.image == nil, let url = URL(string: imageURL) {
+        if let url = URL(string: imageURL) {
             do {
                 imageData = try Data(contentsOf: url)
                 userImage.image = UIImage(data: imageData)
@@ -32,8 +33,8 @@ final class LeaderboardTrialTableViewCell: UITableViewCell {
             }
         }
 
+        
         metricsRowView.viewModel = viewModel.metricsRowViewModel
-        metricsRowView.addShadow(radius: 3.0, color: .black, opacity: 0.25)
         userImage.clipsToBounds = true
         userImage.layer.cornerRadius = userImage.frame.width/2
     }

@@ -35,6 +35,16 @@ final class TrialsViewController: UIViewController {
     }
 
     private func setupBindings() {
+        viewModel.sort.asDriver().drive(onNext: { [unowned self] sort in
+            self.tableView.reloadData()
+        }).disposed(by: disposeBag)
+
+        viewModel.dismiss.asDriver().drive(onNext: { dismiss in
+            if dismiss {
+                ViewControllerPresenter.presentViewController(presenter: self, type: .home)
+            }
+        }).disposed(by: disposeBag)
+
         viewModel.initialize.asObservable()
             .subscribe(onNext: { [weak self] initialize in
                 guard let welf = self else { return }
@@ -46,10 +56,8 @@ final class TrialsViewController: UIViewController {
                         welf.tableView.reloadData()
                     }
                 }
-            }).disposed(by: disposeBag)
-        viewModel.sort.asDriver().drive(onNext: { [unowned self] sort in
-            self.tableView.reloadData()
-        }).disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
     }
 
     private func configureTableView() {
