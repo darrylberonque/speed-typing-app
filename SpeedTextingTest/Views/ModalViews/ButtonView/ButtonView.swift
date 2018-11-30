@@ -32,6 +32,8 @@ final class ButtonView: UIView {
         }
     }
 
+    // MARK: - Lifecycle
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initResultsView()
@@ -48,6 +50,8 @@ final class ButtonView: UIView {
         buttonView.frame = self.bounds
         buttonView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
+
+    // MARK: - UI and Bindings
 
     private func setupUI() {
         homeButton.layer.borderWidth = CGFloat(Constants.backButtonBorderWidth)

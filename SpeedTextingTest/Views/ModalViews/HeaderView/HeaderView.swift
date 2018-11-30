@@ -22,6 +22,8 @@ final class HeaderView: UIView {
         }
     }
 
+    // MARK: - Lifecycle
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initHeaderView()
@@ -31,6 +33,8 @@ final class HeaderView: UIView {
         super.init(coder: aDecoder)
         initHeaderView()
     }
+
+    // MARK: - Setup view and state
 
     // TODO: - Generalize UIView initialization w/ inheritance.
     private func initHeaderView() {

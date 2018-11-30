@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 final class TrialCellViewModel {
 
     var user: UserModel
+    var userImage: UIImage?
     var trial: TrialModel
     var metricsRowViewModel: MetricsRowViewModel
 
@@ -18,5 +20,19 @@ final class TrialCellViewModel {
         self.user = user
         self.trial = trial
         self.metricsRowViewModel = MetricsRowViewModel(metrics: trial.metrics!)
+    }
+    
+    func setUIImage() {
+        guard let imageURL = user.imageURL else { return }
+
+        var imageData: Data
+        if let url = URL(string: imageURL) {
+            do {
+                imageData = try Data(contentsOf: url)
+                userImage = UIImage(data: imageData)
+            } catch {
+                print(error)
+            }
+        }
     }
 }

@@ -20,6 +20,8 @@ final class MetricsRowView: UIView {
         }
     }
 
+    // MARK: - Lifecycle
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initMetricsRowView()
@@ -29,6 +31,8 @@ final class MetricsRowView: UIView {
         super.init(coder: aDecoder)
         initMetricsRowView()
     }
+
+    // MARK: - Setup view
 
     private func initMetricsRowView() {
         Bundle.main.loadNibNamed("MetricsRowView", owner: self, options: nil)

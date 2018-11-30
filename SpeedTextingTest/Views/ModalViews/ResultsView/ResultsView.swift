@@ -22,6 +22,8 @@ final class ResultsView: UIView {
         }
     }
 
+    // MARK: - Lifecycle
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initResultsView()
@@ -31,6 +33,8 @@ final class ResultsView: UIView {
         super.init(coder: aDecoder)
         initResultsView()
     }
+
+    // MARK: - Initialize and populate view state
 
     private func initResultsView() {
         Bundle.main.loadNibNamed("ResultsView", owner: self, options: nil)

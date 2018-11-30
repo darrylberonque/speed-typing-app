@@ -26,6 +26,8 @@ final class TopMetricsView: UIView {
         }
     }
 
+    // MARK: - Lifecycle
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initTopMetricsView()
@@ -35,6 +37,8 @@ final class TopMetricsView: UIView {
         super.init(coder: aDecoder)
         initTopMetricsView()
     }
+
+    // MARK: - Setup view
 
     private func initTopMetricsView() {
         Bundle.main.loadNibNamed("TopMetricsView", owner: self, options: nil)
@@ -51,15 +55,6 @@ final class TopMetricsView: UIView {
 
     private func setupBindings() {
         // TODO: - Get view to follow gesture back down
-        draggableView.rx
-            .panGesture()
-            .when(.began, .changed)
-            .asTranslation()
-            .subscribe(onNext: { translation, _ in
-                if abs(translation.y) < CGFloat(Constants.topMetricsDraggableDistance) {
-                    self.topMetricsView.transform = CGAffineTransform(translationX: 0, y: translation.y)
-                }
-            })
-            .disposed(by: disposeBag)
+        
     }
 }

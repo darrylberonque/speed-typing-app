@@ -48,7 +48,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.83466665695110953" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="75" id="AFc-Mx-cT8"/>
                         <constraint firstAttribute="width" constant="75" id="G4H-DO-XoC"/>

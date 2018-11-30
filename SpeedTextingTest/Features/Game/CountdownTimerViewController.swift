@@ -18,6 +18,8 @@ final class CountdownTimerViewController: UIViewController {
     private var timer = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
     private var disposeBag = DisposeBag()
 
+    // MARK: - Lifecycle
+
     init() {
         super.init(nibName: nil, bundle: nil)
 
@@ -29,8 +31,14 @@ final class CountdownTimerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         setupBindings()
     }
+
+    // MARK: - Bindings
 
     private func setupBindings() {
         timer.asObservable()

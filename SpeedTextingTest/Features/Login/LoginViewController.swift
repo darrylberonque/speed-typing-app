@@ -14,11 +14,15 @@ import RxSwift
 
 final class LoginViewController: UIViewController {
 
+    @IBOutlet private weak var loadingScreen: UIView!
+    @IBOutlet private weak var spinner: UIActivityIndicatorView!
     @IBOutlet private weak var facebookButton: UIButton!
     @IBOutlet private weak var googleButton: UIButton!
 
     private var viewModel: LoginViewModel = LoginViewModel()
     private var disposeBag: DisposeBag = DisposeBag()
+
+    // MARK: - Lifecycle
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -34,6 +38,8 @@ final class LoginViewController: UIViewController {
         configureSignInDelegates()
     }
 
+    // MARK: - Configuring properties
+
     private func configureButtons() {
         facebookButton.configureRoundedButton(color: .facebookColor)
         googleButton.configureRoundedButton(color: .googleColor)
@@ -46,6 +52,9 @@ final class LoginViewController: UIViewController {
     }
 
     func constructUser(name: String, email: String, imageURL: String, authID: String) {
+        
+        showLoadingScreen()
+        
         var user = UserModel()
         user.name = name
         user.email = email
@@ -53,14 +62,20 @@ final class LoginViewController: UIViewController {
         user.authID = authID
 
         RequestManager.postUser(userResult: UserEncodableResult(user: user))
-            .subscribe(onNext: { userResult in
-                guard let id = userResult.user?.id else { return }
+            .subscribe(onNext: { [weak self] userResult in
+                guard let welf = self, let id = userResult.user?.id else { return }
                 UserDefaults.standard.set(id, forKey: Constants.cachedID)
                 DispatchQueue.main.async {
-                    ViewControllerPresenter.presentViewController(presenter: self, type: .home)
+                    welf.spinner.stopAnimating()
+                    ViewControllerPresenter.presentViewController(presenter: welf, type: .home)
                 }
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func showLoadingScreen() {
+        loadingScreen.isHidden = false
+        spinner.startAnimating()
     }
 
     @IBAction func loginWithFacebook(_ sender: UIButton) {

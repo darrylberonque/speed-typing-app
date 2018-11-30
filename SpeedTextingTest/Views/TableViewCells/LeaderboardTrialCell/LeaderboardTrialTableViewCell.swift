@@ -21,19 +21,8 @@ final class LeaderboardTrialTableViewCell: UITableViewCell {
     }
 
     private func initLeaderboardTrial() {
-        guard let viewModel = self.viewModel, let imageURL = viewModel.user.imageURL else { return }
-
-        var imageData: Data
-        if let url = URL(string: imageURL) {
-            do {
-                imageData = try Data(contentsOf: url)
-                userImage.image = UIImage(data: imageData)
-            } catch {
-                print(error)
-            }
-        }
-
-        
+        guard let viewModel = self.viewModel, let image = viewModel.userImage else { return }
+        userImage.image = image
         metricsRowView.viewModel = viewModel.metricsRowViewModel
         userImage.clipsToBounds = true
         userImage.layer.cornerRadius = userImage.frame.width/2

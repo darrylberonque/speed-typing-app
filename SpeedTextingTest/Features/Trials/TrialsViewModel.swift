@@ -20,9 +20,13 @@ final class TrialsViewModel {
     var initialize = BehaviorRelay(value: false)
     var sort = BehaviorRelay(value: MetricType.time)
     var dismiss = BehaviorRelay(value: false)
+    var sortedTrialCellViewModels = BehaviorRelay(value: [TrialCellViewModel]())
 
     private var fetchUsers = BehaviorRelay(value: false)
     private var disposeBag = DisposeBag()
+    private var usersDownloaded = 0
+
+    // MARK: - Lifecycle
 
     init(type: ViewControllerType) {
         self.type = type
@@ -44,7 +48,6 @@ final class TrialsViewModel {
     }
 
     private func setupBindings() {
-        // TODO: - Setup bindings with nav bar sorting and back button, also gestures from top metrics vm
         guard let navBarViewModel = navBarViewModel else { return }
         navBarViewModel.selectedSort.asObservable()
             .bind(to: sort)
@@ -55,30 +58,40 @@ final class TrialsViewModel {
     }
 
     // MARK: - UITableViewDataSource
+
     func sortedTrialCells() -> [TrialCellViewModel] {
         guard let navBarViewModel = navBarViewModel else { return [] }
         switch navBarViewModel.selectedSort.value {
         case .time:
+            sortedTrialCellViewModels.accept(trialCellViewModels.reversed())
             return trialCellViewModels.reversed()
         case .accuracy:
-            return trialCellViewModels.sorted(by: { first, second in
+            let accuracySorted = trialCellViewModels.sorted(by: { first, second in
                 return first.metricsRowViewModel.metrics.accuracy > second.metricsRowViewModel.metrics.accuracy
             })
+            sortedTrialCellViewModels.accept(accuracySorted)
+            return accuracySorted
         case .wpm:
-            return trialCellViewModels.sorted(by: { first, second in
+            let wpmSorted = trialCellViewModels.sorted(by: { first, second in
                 return first.metricsRowViewModel.metrics.wpm > second.metricsRowViewModel.metrics.wpm
             })
+            sortedTrialCellViewModels.accept(wpmSorted)
+            return wpmSorted
         case .cpm:
-            return trialCellViewModels.sorted(by: { first, second in
+            let cpmSorted = trialCellViewModels.sorted(by: { first, second in
                 return first.metricsRowViewModel.metrics.cpm > second.metricsRowViewModel.metrics.cpm
             })
+            sortedTrialCellViewModels.accept(cpmSorted)
+            return cpmSorted
         }
     }
 
     // MARK: - UITableViewDelegate
 
-    func configureModalViewModel() {
-        
+    func configureModalViewModel(row: Int) -> ModalViewModel{
+        let cellViewModel = sortedTrialCellViewModels.value[row]
+        let modalVM = ModalViewModel(type: .display, trial: cellViewModel.trial, user: cellViewModel.user)
+        return modalVM
     }
 
 }
@@ -109,12 +122,24 @@ extension TrialsViewModel {
                 return RequestManager.getUser(userID: userID)
             }.subscribe(onNext: { [weak self] userResult in
                 guard let welf = self, let user = userResult.user else { return }
-                let userTrials = welf.trialCellViewModels.filter({ viewModel in
-                    viewModel.trial.userID == user.id
+
+                let userTrials = welf.trialCellViewModels.filter({ $0.trial.userID == user.id })
+                userTrials.forEach({ trial in
+                    trial.user = user
+                    trial.setUIImage()
                 })
-                userTrials.forEach({ $0.user = user })
-                welf.initialize.accept(true)
-            })
+
+                welf.usersDownloaded += 1
+                if welf.usersDownloaded == welf.trialCellViewModels.count {
+                    welf.initialize.accept(true)
+                    welf.usersDownloaded = 0
+                }
+
+            }, onError: { error in
+                print(error)
+            }, onCompleted: {
+                self.initialize.accept(true)
+            }, onDisposed: {})
             .disposed(by: disposeBag)
     }
 

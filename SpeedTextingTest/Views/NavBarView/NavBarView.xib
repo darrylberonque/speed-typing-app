@@ -35,7 +35,7 @@
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ji5-6z-Mue" userLabel="SortControl">
                     <rect key="frame" x="44" y="77.5" width="287" height="29"/>
                     <segments>
-                        <segment title="Time"/>
+                        <segment title="Date"/>
                         <segment title="Accuracy"/>
                         <segment title="WPM"/>
                         <segment title="CPM"/>

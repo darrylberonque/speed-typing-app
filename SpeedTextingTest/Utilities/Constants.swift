@@ -18,8 +18,8 @@ class Constants {
     static let metricCircleStartAngle = (3/2) * CGFloat.pi
     static let metricCircleEndAngle = metricCircleStartAngle + (2 * CGFloat.pi)
     static let backButtonBorderWidth = 2.0
-    static let topMetricsDraggableDistance = 150
-
+    static let topMetricsUpperLimitOffset = 90
+    static let topMetricsLowerLimitOffset = 50
 
     // MARK: - Login Constants
     static let defaultProfileImageURL = "http://mainenordmenn.com/wp-content/uploads/2017/09/Maine-Nordmenn-Board-Generic-Profile.jpg"
@@ -41,7 +41,7 @@ class Constants {
 
     // MARK: - Metric View Constants
     static let metricCircleLineWidth = 30
-    static let circleAnimationDuration = 1.0
+    static let circleAnimationDuration = 1.5
 
     static let lowStrokeEndLimit = 0.33
     static let mediumStrokeEndLimit = 0.66

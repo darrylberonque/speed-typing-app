@@ -20,6 +20,8 @@ class ModalViewController: UIViewController {
     private var disposeBag = DisposeBag()
     private var viewModel: ModalViewModel?
 
+    // MARK: - Lifecycle
+
     init(viewModel: ModalViewModel) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
@@ -34,6 +36,8 @@ class ModalViewController: UIViewController {
         initModalState()
         setupButtonBindings()
     }
+
+    // MARK: - Setup modal state
 
     private func initModalState() {
         modalView.addShadow(radius: 3.0, color: .black, opacity: 0.25)

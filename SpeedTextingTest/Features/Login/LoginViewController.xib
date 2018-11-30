@@ -14,6 +14,8 @@
             <connections>
                 <outlet property="facebookButton" destination="fnP-gI-gP8" id="MKP-cJ-Og4"/>
                 <outlet property="googleButton" destination="2H2-7W-MMz" id="kha-kC-o1b"/>
+                <outlet property="loadingScreen" destination="2by-Lw-nub" id="E2o-fQ-O6n"/>
+                <outlet property="spinner" destination="mlV-Fw-ri0" id="16y-bw-DV1"/>
                 <outlet property="view" destination="iN0-l3-epB" id="rUz-Ox-9Kd"/>
             </connections>
         </placeholder>
@@ -73,18 +75,35 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2by-Lw-nub" userLabel="AuthenticationLoadScreen">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mlV-Fw-ri0">
+                            <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="mlV-Fw-ri0" firstAttribute="centerX" secondItem="2by-Lw-nub" secondAttribute="centerX" id="BgW-Vm-UF9"/>
+                        <constraint firstItem="mlV-Fw-ri0" firstAttribute="centerY" secondItem="2by-Lw-nub" secondAttribute="centerY" id="J8O-zW-vuJ"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="2H2-7W-MMz" secondAttribute="bottom" constant="45" id="6RP-ZX-84u"/>
                 <constraint firstItem="2H2-7W-MMz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7I0-9p-bUB"/>
+                <constraint firstItem="2by-Lw-nub" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="8eR-EY-jsM"/>
+                <constraint firstItem="2by-Lw-nub" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="9hz-C2-mxo"/>
                 <constraint firstItem="xQG-Qf-KLh" firstAttribute="top" secondItem="IUY-X2-ZQ8" secondAttribute="bottom" constant="8" id="BfO-Sm-JZN"/>
                 <constraint firstItem="qk3-Qc-8TM" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" priority="750" constant="172" id="Ehg-Gn-EB8"/>
                 <constraint firstItem="fnP-gI-gP8" firstAttribute="top" secondItem="xQG-Qf-KLh" secondAttribute="bottom" constant="42" id="FZ7-zM-Zn4"/>
                 <constraint firstItem="fnP-gI-gP8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Hsa-dm-mMs"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2H2-7W-MMz" secondAttribute="trailing" constant="16" id="P7e-aZ-QDG"/>
                 <constraint firstItem="IUY-X2-ZQ8" firstAttribute="top" secondItem="qk3-Qc-8TM" secondAttribute="bottom" constant="30" id="TQ9-TY-yWL"/>
+                <constraint firstItem="2by-Lw-nub" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ViC-ZM-EUB"/>
                 <constraint firstItem="IUY-X2-ZQ8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ww4-V6-nnM"/>
+                <constraint firstItem="2by-Lw-nub" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Y9d-fQ-h3y"/>
                 <constraint firstItem="xQG-Qf-KLh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bEO-yw-02B"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fnP-gI-gP8" secondAttribute="trailing" constant="16" id="h4D-7k-Q5c"/>
                 <constraint firstItem="2H2-7W-MMz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ppJ-7A-2YK"/>

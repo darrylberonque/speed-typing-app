@@ -30,6 +30,8 @@ final class SpeedTextingViewModel {
         setupBindings()
     }
 
+    // MARK: - Bindings
+
     private func setupBindings() {
         bindParagraphText()
         bindParagraphTextDisplay()

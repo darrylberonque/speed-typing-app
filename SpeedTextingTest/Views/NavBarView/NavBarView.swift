@@ -26,6 +26,8 @@ final class NavBarView: UIView {
         }
     }
 
+    // MARK: - Lifecycle
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initNavBarView()
@@ -43,6 +45,8 @@ final class NavBarView: UIView {
         navBarView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
 
+    // MARK: - Bindings
+    
     private func setupBindings() {
         backButton.rx.tap.asObservable()
             .subscribe(onNext: { [weak self] _ in

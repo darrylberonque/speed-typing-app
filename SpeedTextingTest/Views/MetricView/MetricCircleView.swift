@@ -41,6 +41,8 @@ class MetricCircleView: UIView {
         }
     }
 
+    // MARK: - Lifecycle
+
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -48,6 +50,8 @@ class MetricCircleView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+
+    // MARK: - UI and animation Setup
 
     private func configureCAShapeLayer() {
         let borderPath = UIBezierPath(arcCenter: CGPoint(x: frame.width / 2.0, y: frame.height / 2.0), radius: (bounds.width-CGFloat(Constants.metricCircleLineWidth))/2, startAngle: Constants.metricCircleStartAngle, endAngle: Constants.metricCircleEndAngle, clockwise: true)

@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Dt-Za-QFS" customClass="MetricsRowView" customModule="SpeedTextingTest" customModuleProvider="target">
-                    <rect key="frame" x="27.5" y="100" width="245" height="100"/>
+                    <rect key="frame" x="27.5" y="69" width="245" height="100"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" priority="750" constant="100" id="f4e-Wb-Fgd"/>
@@ -31,7 +31,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Metrics:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqg-cn-aFa">
-                    <rect key="frame" x="50" y="45" width="200" height="55"/>
+                    <rect key="frame" x="50" y="45" width="200" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="62n-gX-4gM"/>
                     </constraints>
@@ -51,7 +51,6 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="7e6-Cu-Mi5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="17.5" id="9nc-mR-Xau"/>
-                <constraint firstAttribute="bottom" secondItem="2Dt-Za-QFS" secondAttribute="bottom" constant="20" id="Ovq-tR-ANW"/>
                 <constraint firstItem="2Dt-Za-QFS" firstAttribute="top" secondItem="Eqg-cn-aFa" secondAttribute="bottom" id="TGA-ck-Uw7"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2Dt-Za-QFS" secondAttribute="trailing" priority="750" constant="15" id="aZO-Pn-6GP"/>
                 <constraint firstItem="7e6-Cu-Mi5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ewz-TW-Iib"/>

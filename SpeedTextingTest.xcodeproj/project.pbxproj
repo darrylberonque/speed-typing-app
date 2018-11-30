@@ -54,7 +54,6 @@
 		27655D9221ADEAEA00374CB4 /* Double+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27655D9121ADEAEA00374CB4 /* Double+extensions.swift */; };
 		276679D621AFA4EC004866C1 /* MetricsRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276679D521AFA4EC004866C1 /* MetricsRowView.xib */; };
 		276679D921AFA78B004866C1 /* MetricsRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276679D821AFA78B004866C1 /* MetricsRowViewModel.swift */; };
-		276679DD21AFB017004866C1 /* MetricsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276679DC21AFB017004866C1 /* MetricsRowView.swift */; };
 		276679E221AFB345004866C1 /* UserTrialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276679E021AFB345004866C1 /* UserTrialTableViewCell.swift */; };
 		276679E321AFB345004866C1 /* UserTrialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276679E121AFB345004866C1 /* UserTrialTableViewCell.xib */; };
 		276679E621AFB35E004866C1 /* LeaderboardTrialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276679E421AFB35E004866C1 /* LeaderboardTrialTableViewCell.swift */; };
@@ -76,8 +75,9 @@
 		279E838A21AF10830088D532 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E838921AF10830088D532 /* ButtonView.swift */; };
 		279E838C21AF10910088D532 /* ButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279E838B21AF10910088D532 /* ButtonView.xib */; };
 		279E838E21AF109C0088D532 /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E838D21AF109C0088D532 /* ButtonViewModel.swift */; };
-		279E839021AF2D3A0088D532 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279E838F21AF2C1E0088D532 /* HeaderView.xib */; };
 		279E839221AF7C680088D532 /* ModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E839121AF7C680088D532 /* ModalViewModel.swift */; };
+		58CF5DBA21B35B160001363F /* MetricsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CF5DB921B35B160001363F /* MetricsRowView.swift */; };
+		58CF5DBC21B35B920001363F /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58CF5DBB21B35B920001363F /* HeaderView.xib */; };
 		768C7C7E6A2861A1477EB753 /* Pods_SpeedTextingTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B931DB5E61F68B37088F7D55 /* Pods_SpeedTextingTestTests.framework */; };
 		E1CDED67C4FC25F7907DA967 /* Pods_SpeedTextingTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA195E4E02839643B9E9284 /* Pods_SpeedTextingTestUITests.framework */; };
 		E3D39BFD9909E09FCDCCEFCA /* Pods_SpeedTextingTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A61EDA57E5B3C5920525BBC /* Pods_SpeedTextingTest.framework */; };
@@ -157,7 +157,6 @@
 		27655D9121ADEAEA00374CB4 /* Double+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+extensions.swift"; sourceTree = "<group>"; };
 		276679D521AFA4EC004866C1 /* MetricsRowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MetricsRowView.xib; sourceTree = "<group>"; };
 		276679D821AFA78B004866C1 /* MetricsRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsRowViewModel.swift; sourceTree = "<group>"; };
-		276679DC21AFB017004866C1 /* MetricsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MetricsRowView.swift; path = "/Users/darryl.beronque/Developer/speed-texting/SpeedTextingTest/SpeedTextingTest/Views/TableViewCells/MetricsRowView/MetricsRowView.swift"; sourceTree = "<absolute>"; };
 		276679E021AFB345004866C1 /* UserTrialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTrialTableViewCell.swift; sourceTree = "<group>"; };
 		276679E121AFB345004866C1 /* UserTrialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTrialTableViewCell.xib; sourceTree = "<group>"; };
 		276679E421AFB35E004866C1 /* LeaderboardTrialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTrialTableViewCell.swift; sourceTree = "<group>"; };
@@ -179,10 +178,11 @@
 		279E838921AF10830088D532 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		279E838B21AF10910088D532 /* ButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonView.xib; sourceTree = "<group>"; };
 		279E838D21AF109C0088D532 /* ButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModel.swift; sourceTree = "<group>"; };
-		279E838F21AF2C1E0088D532 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HeaderView.xib; path = "/Users/darryl.beronque/Developer/speed-texting/SpeedTextingTest/SpeedTextingTest/Views/ModalViews/HeaderView/HeaderView.xib"; sourceTree = "<absolute>"; };
 		279E839121AF7C680088D532 /* ModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewModel.swift; sourceTree = "<group>"; };
 		3A61EDA57E5B3C5920525BBC /* Pods_SpeedTextingTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeedTextingTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D05984E064E1B59A02E4D8 /* Pods-SpeedTextingTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTextingTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTextingTestUITests/Pods-SpeedTextingTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		58CF5DB921B35B160001363F /* MetricsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricsRowView.swift; sourceTree = "<group>"; };
+		58CF5DBB21B35B920001363F /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		ACAFCF25992D21D1CE5C55B3 /* Pods-SpeedTextingTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTextingTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTextingTestTests/Pods-SpeedTextingTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B931DB5E61F68B37088F7D55 /* Pods_SpeedTextingTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeedTextingTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA195E4E02839643B9E9284 /* Pods_SpeedTextingTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeedTextingTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -450,11 +450,9 @@
 		276679D021AFA3FE004866C1 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				27960EC421B19D0D00CC91DF /* UserTrialCell */,
+				27960EC521B19D2000CC91DF /* LeaderboardTrialCell */,
 				276679D721AFA766004866C1 /* MetricsRowView */,
-				276679E121AFB345004866C1 /* UserTrialTableViewCell.xib */,
-				276679E021AFB345004866C1 /* UserTrialTableViewCell.swift */,
-				276679E521AFB35E004866C1 /* LeaderboardTrialTableViewCell.xib */,
-				276679E421AFB35E004866C1 /* LeaderboardTrialTableViewCell.swift */,
 				27960EC221B046FC00CC91DF /* TrialCellViewModel.swift */,
 			);
 			path = TableViewCells;
@@ -464,7 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				276679D521AFA4EC004866C1 /* MetricsRowView.xib */,
-				276679DC21AFB017004866C1 /* MetricsRowView.swift */,
+				58CF5DB921B35B160001363F /* MetricsRowView.swift */,
 				276679D821AFA78B004866C1 /* MetricsRowViewModel.swift */,
 			);
 			path = MetricsRowView;
@@ -493,7 +491,7 @@
 		27828D2F21AED2120094892E /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
-				279E838F21AF2C1E0088D532 /* HeaderView.xib */,
+				58CF5DBB21B35B920001363F /* HeaderView.xib */,
 				27828D3521AED2B10094892E /* HeaderView.swift */,
 				27828D3121AED27B0094892E /* HeaderViewModel.swift */,
 			);
@@ -508,6 +506,24 @@
 				279E838D21AF109C0088D532 /* ButtonViewModel.swift */,
 			);
 			path = ButtonView;
+			sourceTree = "<group>";
+		};
+		27960EC421B19D0D00CC91DF /* UserTrialCell */ = {
+			isa = PBXGroup;
+			children = (
+				276679E121AFB345004866C1 /* UserTrialTableViewCell.xib */,
+				276679E021AFB345004866C1 /* UserTrialTableViewCell.swift */,
+			);
+			path = UserTrialCell;
+			sourceTree = "<group>";
+		};
+		27960EC521B19D2000CC91DF /* LeaderboardTrialCell */ = {
+			isa = PBXGroup;
+			children = (
+				276679E521AFB35E004866C1 /* LeaderboardTrialTableViewCell.xib */,
+				276679E421AFB35E004866C1 /* LeaderboardTrialTableViewCell.swift */,
+			);
+			path = LeaderboardTrialCell;
 			sourceTree = "<group>";
 		};
 		37FA00EAA733C4A07E37BED7 /* Frameworks */ = {
@@ -642,7 +658,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				279E839021AF2D3A0088D532 /* HeaderView.xib in Resources */,
 				2731E8B921AC2CF7007C8668 /* LoginViewController.xib in Resources */,
 				276679E721AFB35E004866C1 /* LeaderboardTrialTableViewCell.xib in Resources */,
 				2731E8DC21AD0855007C8668 /* TrialsViewController.xib in Resources */,
@@ -653,6 +668,7 @@
 				279E838C21AF10910088D532 /* ButtonView.xib in Resources */,
 				276679E321AFB345004866C1 /* UserTrialTableViewCell.xib in Resources */,
 				276679E921AFBD30004866C1 /* NavBarView.xib in Resources */,
+				58CF5DBC21B35B920001363F /* HeaderView.xib in Resources */,
 				275C66CF21A5A14300FA1439 /* SpeedTextingViewController.xib in Resources */,
 				27655D8B21ADC12C00374CB4 /* MetricView.xib in Resources */,
 				2731E8E421AD7674007C8668 /* CountdownTimerViewController.xib in Resources */,
@@ -826,7 +842,6 @@
 				27828D3221AED27B0094892E /* HeaderViewModel.swift in Sources */,
 				275C66D321A5B8A700FA1439 /* SpeedTextingViewController.swift in Sources */,
 				2731E88E21A71A16007C8668 /* MetricsModel.swift in Sources */,
-				276679DD21AFB017004866C1 /* MetricsRowView.swift in Sources */,
 				2731E89421A73438007C8668 /* TrialModel.swift in Sources */,
 				2731E8B521AC2832007C8668 /* LoginViewController.swift in Sources */,
 				279E838E21AF109C0088D532 /* ButtonViewModel.swift in Sources */,
@@ -844,6 +859,7 @@
 				2731E8C721AC56B2007C8668 /* AuthenticatorFactory.swift in Sources */,
 				276679F421B02183004866C1 /* TrialsViewModel.swift in Sources */,
 				27655D9221ADEAEA00374CB4 /* Double+extensions.swift in Sources */,
+				58CF5DBA21B35B160001363F /* MetricsRowView.swift in Sources */,
 				2731E8D221ACE615007C8668 /* HomeViewController.swift in Sources */,
 				2731E8B021AA2AB6007C8668 /* UserModel.swift in Sources */,
 				2731E89821A7C56E007C8668 /* URLRequestBuilder.swift in Sources */,
@@ -1049,8 +1065,9 @@
 			baseConfigurationReference = 0F603B117D9DEAE1B19631F6 /* Pods-SpeedTextingTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = THP5EV5EJ9;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y33QZD85U7;
 				INFOPLIST_FILE = SpeedTextingTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1059,7 +1076,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = darrylberonque.SpeedTextingTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2a033687-a6a5-4a67-a575-9c63db69c661";
-				PROVISIONING_PROFILE_SPECIFIER = "General iOS Development Provisioning Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1070,8 +1087,9 @@
 			baseConfigurationReference = E1807DD72E8D9118CDA63C93 /* Pods-SpeedTextingTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = THP5EV5EJ9;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y33QZD85U7;
 				INFOPLIST_FILE = SpeedTextingTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1080,7 +1098,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = darrylberonque.SpeedTextingTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2a033687-a6a5-4a67-a575-9c63db69c661";
-				PROVISIONING_PROFILE_SPECIFIER = "General iOS Development Provisioning Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -36,6 +36,8 @@ final class MetricView: UIView {
         }
     }
 
+    // MARK: - Lifecycle
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initMetricView()
@@ -45,6 +47,8 @@ final class MetricView: UIView {
         super.init(coder: aDecoder)
         initMetricView()
     }
+
+    // MARK: - Initialization and updates for state of view
 
     private func initMetricView() {
         Bundle.main.loadNibNamed("MetricView", owner: self, options: nil)

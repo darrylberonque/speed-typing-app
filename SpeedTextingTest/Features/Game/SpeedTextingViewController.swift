@@ -26,6 +26,8 @@ final class SpeedTextingViewController: UIViewController {
     private var timer = Timer()
     private var user: UserModel?
 
+    // MARK: - Lifecycle
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -41,6 +43,8 @@ final class SpeedTextingViewController: UIViewController {
         setupBindings()
         setupUI()
     }
+
+    // MARK: - Configure properties
 
     // TODO: - Generalized with inheritance using a top level VC
     private func getUser() {
@@ -98,6 +102,8 @@ final class SpeedTextingViewController: UIViewController {
                 guard let user = self.user else { return }
                 let modalVC = ModalViewController(viewModel: ModalViewModel(type: .result, trial: trial, user: user ))
                 self.userTextInput.resignFirstResponder()
+
+                modalVC.view.frame = self.view.frame
                 self.view.addSubview(modalVC.view)
 
                 RequestManager.postTrial(trialResult: TrialEncodableResult(trial: trial))

@@ -20,6 +20,8 @@ final class HomeViewController: UIViewController {
 
     private var disposeBag = DisposeBag()
 
+    // MARK: - Lifecycle
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -33,6 +35,8 @@ final class HomeViewController: UIViewController {
         configureUI()
         setupBindings()
     }
+
+    // MARK: - UI Configuration
 
     private func configureUI() {
         leaderboardButtonContainer.layer.cornerRadius = trialsButtonContainer.frame.width/2
