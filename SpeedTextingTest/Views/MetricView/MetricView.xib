@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MetricView" customModule="SpeedTextingTest" customModuleProvider="target">
+            <connections>
+                <outlet property="metricCircleView" destination="CLH-Dm-4Ax" id="ZUw-H4-TXI"/>
+                <outlet property="metricLayerView" destination="grM-tX-0Yj" id="A8f-Hg-Y6a"/>
+                <outlet property="metricTypeLabel" destination="0CQ-iq-Y9V" id="ifr-Ap-K3x"/>
+                <outlet property="metricValueLabel" destination="cld-lb-mht" id="JYv-hq-Wev"/>
+                <outlet property="metricView" destination="iN0-l3-epB" id="6rK-F1-Vba"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="MetricView">
+            <rect key="frame" x="0.0" y="0.0" width="75" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLH-Dm-4Ax" userLabel="MetricCircleView" customClass="MetricCircleView" customModule="SpeedTextingTest" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grM-tX-0Yj" userLabel="MetricLayerView">
+                            <rect key="frame" x="10" y="10" width="55" height="55"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cld-lb-mht" userLabel="MetricValueLabel">
+                                    <rect key="frame" x="0.0" y="5" width="55" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="55" id="D0a-ic-blu"/>
+                                        <constraint firstAttribute="height" constant="45" id="goc-Aj-sXn"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                    <color key="textColor" red="0.25490196079999999" green="0.38823529410000002" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="cld-lb-mht" firstAttribute="centerX" secondItem="grM-tX-0Yj" secondAttribute="centerX" id="4V1-Qm-V8q"/>
+                                <constraint firstItem="cld-lb-mht" firstAttribute="centerY" secondItem="grM-tX-0Yj" secondAttribute="centerY" id="ZoL-yH-tFO"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.83466665695110953" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="75" id="AFc-Mx-cT8"/>
+                        <constraint firstAttribute="width" constant="75" id="G4H-DO-XoC"/>
+                        <constraint firstAttribute="trailing" secondItem="grM-tX-0Yj" secondAttribute="trailing" constant="10" id="LgJ-ws-Cat"/>
+                        <constraint firstItem="grM-tX-0Yj" firstAttribute="leading" secondItem="CLH-Dm-4Ax" secondAttribute="leading" constant="10" id="VLo-wc-Zjf"/>
+                        <constraint firstItem="grM-tX-0Yj" firstAttribute="top" secondItem="CLH-Dm-4Ax" secondAttribute="top" constant="10" id="ofr-U8-G0M"/>
+                        <constraint firstAttribute="bottom" secondItem="grM-tX-0Yj" secondAttribute="bottom" constant="10" id="tQa-zT-fhY"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CQ-iq-Y9V" userLabel="MetricTypeLabel">
+                    <rect key="frame" x="0.0" y="75" width="75" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="750" constant="25" id="ibI-Ph-o7M"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="11.199999809265137"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="CLH-Dm-4Ax" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="2zI-i8-zqy"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0CQ-iq-Y9V" secondAttribute="trailing" id="6UF-yS-eTU"/>
+                <constraint firstItem="0CQ-iq-Y9V" firstAttribute="top" secondItem="CLH-Dm-4Ax" secondAttribute="bottom" id="NIk-uT-5L7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="0CQ-iq-Y9V" secondAttribute="bottom" id="Tdz-d1-sfS"/>
+                <constraint firstItem="0CQ-iq-Y9V" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="eVo-RP-TW6"/>
+                <constraint firstItem="CLH-Dm-4Ax" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="wug-8A-sVC"/>
+                <constraint firstItem="CLH-Dm-4Ax" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xK4-Jn-FEb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="53.600000000000001" y="47.676161919040482"/>
+        </view>
+    </objects>
+</document>
